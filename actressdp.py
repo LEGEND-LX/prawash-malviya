@@ -1,4 +1,4 @@
-#Made By @Its_LegendBoy Keep Credits If You Are Goanna Kang This Lol
+#Made By @Legendl_Mr_Hacker Keep Credits If You Are Goanna Kang This Lol
 
 #And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
 
@@ -12,7 +12,7 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
-from LEGENDBOT.utils import admin_cmd
+from PYTHONBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
