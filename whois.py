@@ -12,7 +12,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from .. import LOGS, TMP_DOWNLOAD_DIRECTORY
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 # Copyright (C) 2019 The Raphielscape Company LLC.

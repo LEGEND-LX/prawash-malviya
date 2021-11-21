@@ -34,4 +34,11 @@ async def _(event):
 
 CmdHelp("yadash").add_command(
 	'yaadash', None, 'Use and see'
+).add_info(
+       "Its Very funny module u can use it to prank your frieds"
+).add_warning(
+       "Harmless Module✅"
+).add_type(
+       "Addons"
 ).add()
+

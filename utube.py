@@ -1,4 +1,4 @@
-# Plugin made by @legendboi_atul for DARK COBRA..
+# Plugin made by @legend-lxboi_atul for DARK COBRA..
 # You can use this..but don't edit/remove these comment lines..
 # This module fetches the link from YouTube for the given query..
 # merged .uta
@@ -14,7 +14,7 @@ import json
 from pathlib import Path
 from youtube_search import YoutubeSearch
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd, edit_or_reply
 
 
 IF_EMOJI = re.compile(

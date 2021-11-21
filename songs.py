@@ -1,24 +1,51 @@
-# Originally made by @rkpavi for @javes05
-# porting to hellbot by @David99q...
-# first userbot to port javes song module...
-# keep credit if u wanna kang...
-# else u are a gay...no doubt in that....
-
-
-import asyncio
-import re
+from userbot.helpers import *
+import base64
+import io
+import os
+from pathlib import Path
+from . import *
+from telethon import types
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+from validators.url import url
+from youtubesearchpython import Video
+import json
+import os
+import time
+import requests
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.types import DocumentAttributeAudio
+from youtube_dl import YoutubeDL
+from youtube_dl.utils import (
+    ContentTooShortError,
+    DownloadError,
+    ExtractorError,
+    GeoRestrictedError,
+    MaxDownloadsReached,
+    PostProcessingError,
+    UnavailableVideoError,
+    XAttrMetadataError,
+)
+
+try:
+
+    from youtubesearchpython import *
+
+except:
+    os.system("pip install pip install youtube-search-python")
+    from youtubesearchpython import SearchVideos
 
 from userbot import bot
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.functions import deEmojify
+
+from userbot.utils import delete_PYTHON, edit_or_reply
 
 @bot.on(admin_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lyrics(?: |$)(.*)", allow_sudo=True))
 async def nope(aura):
-    LEGEND = aura.pattern_match.group(1)
-    if not LEGEND:
+    PYTHON = aura.pattern_match.group(1)
+    if not PYTHON:
         if aura.is_reply:
             (await aura.get_reply_message()).message
         else:
@@ -27,7 +54,7 @@ async def nope(aura):
             )
             return
 
-    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(LEGEND))}")
+    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(PYTHON))}")
 
     await troll[0].click(
         aura.chat_id,
@@ -95,270 +122,119 @@ async def FindMusicPleaseBot(gaana):
 
 # -------------------------------------------------------------------------------
 
-import json
-import os
-import time
 
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.types import DocumentAttributeAudio
-from youtube_dl import YoutubeDL
-from youtube_dl.utils import (
-    ContentTooShortError,
-    DownloadError,
-    ExtractorError,
-    GeoRestrictedError,
-    MaxDownloadsReached,
-    PostProcessingError,
-    UnavailableVideoError,
-    XAttrMetadataError,
-)
-
-try:
-
-    from youtubesearchpython import *
-
-except:
-    os.system("pip install pip install youtube-search-python")
-    from youtubesearchpython import SearchVideos
-
-
-@bot.on(admin_cmd(pattern="song(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="song(?: |$)(.*)", allow_sudo=True))
-async def download_video(v_url):
-
-    lazy = v_url
-    sender = await lazy.get_sender()
-    me = await lazy.client.get_me()
-
-    if not sender.id == me.id:
-        rkp = await edit_or_reply(lazy, "`Wait. Processing your request....`")
-    else:
-        rkp = await edit_or_reply(lazy, "`Wait. Processing your request....`")
-    url = v_url.pattern_match.group(1)
-    if not url:
-        return await rkp.edit("**Error** \n__Usage:__ `song <song name>`")
-    search = SearchVideos(url, offset=1, mode="json", max_results=1)
-    test = search.result()
-    p = json.loads(test)
-    q = p.get("search_result")
+@bot.on(admin_cmd(pattern="song ?(.*)"))
+@bot.on(sudo_cmd(pattern="song ?(.*)", allow_sudo=True))
+async def _(event):
+    query = event.text[6:]
+    max_results = 1
+    if query == "":
+        return await eod(event, "__Please give a song name to search.__")
+    hell = await eor(event, f"__Searching for__ `{query}`")
+    hel_ = await song_search(event, query, max_results, details=True)
+    x, title, views, duration, thumb = hel_[0], hel_[1], hel_[2], hel_[3], hel_[4]
+    thumb_name = f'thumb{Legendl_Mr_Hacker}.jpg'
+    thumbnail = requests.get(thumb, allow_redirects=True)
+    open(thumb_name, 'wb').write(thumbnail.content)
+    url = x.replace("\n", "")
     try:
-        url = q[0]["link"]
-    except:
-        return await rkp.edit("`Failed to process your request....`")
-    type = "audio"
-    await rkp.edit("Request processed. **Downloading Now!!!**")
-    if type == "audio":
-        opts = {
-            "format": "bestaudio",
-            "addmetadata": True,
-            "key": "FFmpegMetadata",
-            "writethumbnail": True,
-            "prefer_ffmpeg": True,
-            "geo_bypass": True,
-            "nocheckcertificate": True,
-            "postprocessors": [
-                {
-                    "key": "FFmpegExtractAudio",
-                    "preferredcodec": "mp3",
-                    "preferredquality": "320",
-                }
-            ],
-            "outtmpl": "%(id)s.mp3",
-            "quiet": True,
-            "logtostderr": False,
-        }
-        video = False
-        song = True
-    try:
-        await rkp.edit("**Fetching Song**")
-        with YoutubeDL(opts) as rip:
-            rip_data = rip.extract_info(url)
+        await event.edit("**Fetching Song**")
+        with YoutubeDL(song_opts) as somg:
+            hell_data = somg.extract_info(url)
     except DownloadError as DE:
-        await rkp.edit(f"`{str(DE)}`")
-        return
+        return await eor(hell, f"`{str(DE)}`")
     except ContentTooShortError:
-        await rkp.edit("`The download content was too short.`")
-        return
+        return await eor(hell, "`The download content was too short.`")
     except GeoRestrictedError:
-        await rkp.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
-        )
-        return
+        return await eor(hell, "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`")
     except MaxDownloadsReached:
-        await rkp.edit("`Max-downloads limit has been reached.`")
-        return
+        return await eor(hell, "`Max-downloads limit has been reached.`")
     except PostProcessingError:
-        await rkp.edit("`There was an error during post processing.`")
-        return
+        return await eor(hell, "`There was an error during post processing.`")
     except UnavailableVideoError:
-        await rkp.edit("`Media is not available in the requested format.`")
-        return
+        return await eor(hell, "`Media is not available in the requested format.`")
     except XAttrMetadataError as XAME:
-        await rkp.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
-        return
+        return await eor(hell, f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
     except ExtractorError:
-        await rkp.edit("`There was an error during info extraction.`")
-        return
+        return await eor(hell, "`There was an error during info extraction.`")
     except Exception as e:
-        await rkp.edit(f"{str(type(e)): {str(e)}}")
-        return
+        return await eor(hell, f"{str(type(e)): {str(e)}}")
     c_time = time.time()
-    if song:
-        await rkp.edit(
-            f"🎶 Preparing to upload song 🎶 :-\
-        \n\n**{rip_data['title']}**\
-        \nby __{rip_data['uploader']}__"
-        )
-        await v_url.client.send_file(
-            v_url.chat_id,
-            f"{rip_data['id']}.mp3",
-            supports_streaming=True,
-            attributes=[
-                DocumentAttributeAudio(
-                    duration=int(rip_data["duration"]),
-                    title=str(rip_data["title"]),
-                    performer=str(rip_data["uploader"]),
-                )
-            ],
-            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, v_url, c_time, "Uploading..", f"{rip_data['title']}.mp3")
-            ),
-        )
-        os.remove(f"{rip_data['id']}.mp3")
-        await v_url.delete()
-    elif video:
-        await rkp.edit(
-            f"🎶 Preparing to upload song 🎶 :-\
-        \n\n**{rip_data['title']}**\
-        \nby __{rip_data['uploader']}__"
-        )
-        await v_url.client.send_file(
-            v_url.chat_id,
-            f"{rip_data['id']}.mp4",
-            supports_streaming=True,
-            caption=url,
-            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, v_url, c_time, "Uploading..", f"{rip_data['title']}.mp4")
-            ),
-        )
-        os.remove(f"{rip_data['id']}.mp4")
-        await rkp.delete()
+    await event.edit(f"**🎶 Preparing to upload song 🎶 :** \n\n{hell_data['title']} \n**By :** {hell_data['uploader']}")
+    await event.client.send_file(
+        event.chat_id,
+        f"{hell_data['id']}.mp3",
+        supports_streaming=True,
+        caption=f"**✘ Song -** `{title}` \n**✘ Views -** `{views}` \n**✘ Duration -** `{duration}` \n\n**✘ By :** {legend_mention}",
+        thumb=thumb_name,
+        attributes=[
+            DocumentAttributeAudio(
+                duration=int(hell_data["duration"]),
+                title=str(hell_data["title"]),
+                performer=perf,
+            )
+        ],
+        progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+            progress(d, t, event, c_time, "Uploading..", f"{hell_data['title']}.mp3")
+        ),
+    )
+    await event.delete()
+    os.remove(f"{hell_data['id']}.mp3")
 
 
-@bot.on(admin_cmd(pattern="vsong(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="vsong(?: |$)(.*)", allow_sudo=True))
-async def download_video(v_url):
-    lazy = v_url
-    sender = await lazy.get_sender()
-    me = await lazy.client.get_me()
-    if not sender.id == me.id:
-        rkp = await edit_or_reply(lazy, "Processing video song request....")
-    else:
-        rkp = await edit_or_reply(lazy, "Processing video song request....")
-    url = v_url.pattern_match.group(1)
-    if not url:
-        return await rkp.edit("**Error** \n__Usage:__ `vsong <song name>`")
-    search = SearchVideos(url, offset=1, mode="json", max_results=1)
-    test = search.result()
-    p = json.loads(test)
-    q = p.get("search_result")
+
+@bot.on(admin_cmd(pattern="vsong ?(.*)"))
+@bot.on(sudo_cmd(pattern="vsong ?(.*)", allow_sudo=True))
+async def _(event):
+    query = event.text[7:]
+    max_results = 1
+    if query == "":
+        return await eod(event, "__Please give a song name to search.__")
+    hell = await eor(event, f"__Searching for__ `{query}`")
+    hel_ = await song_search(event, query, max_results, details=True)
+    x, title, views, duration, thumb = hel_[0], hel_[1], hel_[2], hel_[3], hel_[4]
+    thumb_name = f'thumb{Legendl_Mr_Hacker}.jpg'
+    thumbnail = requests.get(thumb, allow_redirects=True)
+    open(thumb_name, 'wb').write(thumbnail.content)
+    url = x.replace("\n", "")
     try:
-        url = q[0]["link"]
-    except:
-        return await rkp.edit("`failed to find`")
-    type = "audio"
-    await rkp.edit("Video Song Request Processed. **Downloading Now!!**")
-    if type == "audio":
-        opts = {
-            "format": "best",
-            "addmetadata": True,
-            "key": "FFmpegMetadata",
-            "prefer_ffmpeg": True,
-            "geo_bypass": True,
-            "nocheckcertificate": True,
-            "postprocessors": [
-                {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}
-            ],
-            "outtmpl": "%(id)s.mp4",
-            "logtostderr": False,
-            "quiet": True,
-        }
-        song = False
-        video = True
-    try:
-        await rkp.edit("Fetching Video Song")
-        with YoutubeDL(opts) as rip:
-            rip_data = rip.extract_info(url)
+        await event.edit("**Fetching Video**")
+        with YoutubeDL(video_opts) as somg:
+            hell_data = somg.extract_info(url)
     except DownloadError as DE:
-        await rkp.edit(f"`{str(DE)}`")
-        return
+        return await eor(hell, f"`{str(DE)}`")
     except ContentTooShortError:
-        await rkp.edit("`The download content was too short.`")
-        return
+        return await eor(hell, "`The download content was too short.`")
     except GeoRestrictedError:
-        await rkp.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
-        )
-        return
+        return await eor(hell, "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`")
     except MaxDownloadsReached:
-        await rkp.edit("`Max-downloads limit has been reached.`")
-        return
+        return await eor(hell, "`Max-downloads limit has been reached.`")
     except PostProcessingError:
-        await rkp.edit("`There was an error during post processing.`")
-        return
+        return await eor(hell, "`There was an error during post processing.`")
     except UnavailableVideoError:
-        await rkp.edit("`Media is not available in the requested format.`")
-        return
+        return await eor(hell, "`Media is not available in the requested format.`")
     except XAttrMetadataError as XAME:
-        await rkp.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
-        return
+        return await eor(hell, f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
     except ExtractorError:
-        await rkp.edit("`There was an error during info extraction.`")
-        return
+        return await eor(hell, "`There was an error during info extraction.`")
     except Exception as e:
-        await rkp.edit(f"{str(type(e)): {str(e)}}")
-        return
+        return await eor(hell, f"{str(type(e)): {str(e)}}")
     c_time = time.time()
-    if song:
-        await rkp.edit(
-            f"🎶 Preparing to upload video song 🎶 :-\
-        \n\n**{rip_data['title']}**\
-        \nby __{rip_data['uploader']}__"
-        )
-        await v_url.client.send_file(
-            v_url.chat_id,
-            f"{rip_data['id']}.mp3",
-            supports_streaming=True,
-            attributes=[
-                DocumentAttributeAudio(
-                    duration=int(rip_data["duration"]),
-                    title=str(rip_data["title"]),
-                    performer=str(rip_data["uploader"]),
-                )
-            ],
-            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, v_url, c_time, "Uploading..", f"{rip_data['title']}.mp3")
-            ),
-        )
-        os.remove(f"{rip_data['id']}.mp3")
-        await v_url.delete()
-    elif video:
-        await rkp.edit(
-            f"🎶 Preparing to upload video song 🎶 :-\
-        \n\n**{rip_data['title']}**\
-        \nby __{rip_data['uploader']}__"
-        )
-        await v_url.client.send_file(
-            v_url.chat_id,
-            f"{rip_data['id']}.mp4",
-            supports_streaming=True,
-            caption=rip_data["title"],
-            progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, v_url, c_time, "Uploading..", f"{rip_data['title']}.mp4")
-            ),
-        )
-        os.remove(f"{rip_data['id']}.mp4")
-        await rkp.delete()
+    await event.edit(f"**📺 Preparing to upload video 📺 :** \n\n{hell_data['title']}\n**By :** {hell_data['uploader']}")
+    await event.client.send_file(
+        event.chat_id,
+        f"{hell_data['id']}.mp4",
+        supports_streaming=True,
+        caption=f"**✘ Video :** `{title}` \n\n**✘ By :** {legend_mention}",
+        thumb=thumb_name,
+        progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+            progress(d, t, event, c_time, "Uploading..", f"{hell_data['title']}.mp4")
+        ),
+    )
+    await event.delete()
+    os.remove(f"{hell_data['id']}.mp4")
+
+
 
 # -------------------------------------------------------------------------------
 import os

@@ -2,17 +2,17 @@ import asyncio
 import random
 from asyncio import sleep
 
-from LEGENDBOT import CmdHelp, bot as LEGENDBOT, ALIVE_NAME
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from PYTHONBOT import CmdHelp, bot as PYTHONBOT, ALIVE_NAME
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Your Lover"
 
-legend = LEGENDBOT.uid
+python = PYTHONBOT.uid
 
-LEGEND = f"[{DEFAULTUSER}](tg://user?id={legend})"
+PYTHON = f"[{DEFAULTUSER}](tg://user?id={python})"
 
-@LEGENDBOT.on(admin_cmd(pattern="hvd$"))
-@LEGENDBOT.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="hvd$"))
+@PYTHONBOT.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
 async def love(event):
     if event.fwd_from:
         return
@@ -38,8 +38,8 @@ async def love(event):
     await event.edit("__**HAPPY VALENTINE'S DAY**__ [❤️](https://telegra.ph/file/4d51f6a5d98ba94ae2af7.jpg)", link_preview=True)
     
     
-@LEGENDBOT.on(admin_cmd(pattern="vday$"))
-@LEGENDBOT.on(sudo_cmd(pattern="vday$", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="vday$"))
+@PYTHONBOT.on(sudo_cmd(pattern="vday$", allow_sudo=True))
 async def gif(event):
     if event.fwd_from:
         return

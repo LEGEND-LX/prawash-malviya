@@ -26,3 +26,4 @@ async def _(event):
 CmdHelp("ωκιρє∂ια").add_command(
     'wikipedia', None, 'Search anything on Wikipedia'
 )
+

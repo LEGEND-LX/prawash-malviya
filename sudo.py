@@ -13,7 +13,7 @@ sudousers = Config.SUDO_USERS
 async def sudo(event):
     sudo = "True" if Config.SUDO_USERS else "False"
     users = sudousers
-    if sudo == "True":
+    if sudo == "False":
         await eor(event, f"📍 **Sudo :**  `Enabled`\n\n📝 **Sudo users :**  `{users}`")
     else:
         await eod(event, f"📍 **Sudo :**  `Disabled`")

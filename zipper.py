@@ -1,5 +1,5 @@
 """ command: .unzip
-coded by @Its_LegendBoy
+coded by @Legenl_Mr_Hacker
 code rewritten my SnapDragon7410
 """
 import asyncio
@@ -9,7 +9,7 @@ import time as t
 import zipfile
 from datetime import datetime
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 

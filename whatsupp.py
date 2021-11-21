@@ -22,3 +22,4 @@ async def payf(event):
 CmdHelp("whatsupp").add_command(
     'ftype', 'Use and See','Eg:-.ftype legend'
 ).add()
+

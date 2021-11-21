@@ -8,8 +8,8 @@ import pybase64
 from sys import executable
 from userbot.cmdhelp import CmdHelp
 from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, bot
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd 
-LEGEND = str(ALIVE_NAME) if ALIVE_NAME else "Du"
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd 
+PYTHON = str(ALIVE_NAME) if ALIVE_NAME else "Du"
 
 import inspect
 running_processes: dict = {}
@@ -27,7 +27,7 @@ async def dc(event):
         await event.edit(" Give a command or use .help terminal.")
         return
     if cmd in ("userbot.session", "env", "printenv"):
-        return await event.edit(f"{LEGEND}: Privacy Error, This command not permitted")
+        return await event.edit(f"{PYTHON}: Privacy Error, This command not permitted")
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
     running_processes.update({message: process})

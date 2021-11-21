@@ -1,7 +1,6 @@
-# Plugin made by @legendboi_atul for DARK COBRA..
-# You can use this..but don't edit/remove these comment lines..
-# This module is for playing tik tak toe game..
-# So wahi...Enjoy
+
+
+
 
 import re
 
@@ -50,3 +49,4 @@ async def nope(doit):
 CmdHelp("xobot").add_command(
     'playxo', None, 'Use and See'
 )
+

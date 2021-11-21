@@ -2,7 +2,7 @@
 Syntax: .wikimedia Query"""
 import requests
 
-from userbot.util import admin_cmd
+from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 @borg.on(admin_cmd(pattern="wikimedia (.*)"))
@@ -45,3 +45,4 @@ async def _(event):
 CmdHelp("wikimedia").add_command(
     'wikimedia', None, 'Search anything on Wikipedia'
 )
+

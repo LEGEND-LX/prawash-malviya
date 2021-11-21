@@ -14,10 +14,10 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import CMD_HELP
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-#==================LEGENDBOT==================
+#==================PYTHONBOT==================
 
 @bot.on(admin_cmd(pattern="scan ?(.*)"))
 @bot.on(sudo_cmd(pattern="scan ?(.*)", allow_sudo=True))
@@ -35,7 +35,7 @@ async def _(event):
     if reply_message.sender.bot:
         await edit_or_reply(event, "Reply to actual users message.")
         return
-    LEGENDevent = await edit_or_reply(event, " `Scanning This media..... wait👀`")
+    PYTHONevent = await edit_or_reply(event, " `Scanning This media..... wait👀`")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -44,19 +44,19 @@ async def _(event):
             await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await LEGENDevent.edit("`Please unblock `@DrWebBot `and try again`")
+            await PYTHONevent.edit("`Please unblock `@DrWebBot `and try again`")
             return
         if response.text.startswith("Forward"):
-            await LEGENDevent.edit(
+            await PYTHONevent.edit(
                 "Can you kindly disable your forward privacy settings for good?"
             )
         else:
             if response.text.startswith("Select"):
-                await LEGENDevent.edit(
+                await PYTHONevent.edit(
                     "`Please go to` @DrWebBot `and select your language.`"
                 )
             else:
-                await LEGENDevent.edit(
+                await PYTHONevent.edit(
                     f"**Antivirus scan was completed. I got the final results.**\n {response.message.message}"
                 )
 
@@ -103,7 +103,7 @@ async def parseqr(qr_e):
 async def _(event):
     if event.fwd_from:
         return
-    LEGENDevent = await edit_or_reply(event, "...")
+    PYTHONevent = await edit_or_reply(event, "...")
     start = datetime.now()
     input_str = event.pattern_match.group(1)
     message = "SYNTAX: `.barcode <long text to include>`"
@@ -141,13 +141,13 @@ async def _(event):
         )
         os.remove(filename)
     except Exception as e:
-        await LEGENDevent.edit(str(e))
+        await PYTHONevent.edit(str(e))
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await LEGENDevent.edit("Created BarCode in {} seconds🤓".format(ms))
+    await PYTHONevent.edit("Created BarCode in {} seconds🤓".format(ms))
     await asyncio.sleep(5)
-    await LEGENDevent.delete()
+    await PYTHONevent.delete()
 
 
 @bot.on(admin_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", outgoing=True))

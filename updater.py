@@ -5,7 +5,7 @@ import sys
 import git
 
 from userbot.Config import Config
-from LEGENDBOT.utils import admin_cmd
+from PYTHONBOT.utils import admin_cmd
 from . import *
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (
@@ -15,13 +15,13 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = Config.UPSTREAM_REPO
-BOT_IS_UP_TO_DATE = "**The LEGENDBOT** is up-to-date sir."
+BOT_IS_UP_TO_DATE = "**The PYTHONBOT** is up-to-date sir."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "changelog: \n\n{changelog}\n"
-    "updating your LEGENDBOT ..."
+    "updating your PYTHONBOT ..."
 )
-NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your LEGENDBOT...`"
+NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your PYTHONBOT...`"
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
@@ -66,7 +66,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("`⚡𝚁𝚞𝚔𝚘 𝙹𝚊𝚛𝚊 𝚜𝚊𝚋𝚛𝚊 𝚔𝚊𝚛𝚘 𝚞𝚙𝚍𝚊𝚝𝚎 𝙷𝚘 𝚗𝚎 𝚓𝚊 𝚛𝚑𝚊 𝚑😅😅`")
+        await message.edit("`⚡⚡𝚁𝚞𝚔𝚘 𝙹𝚊𝚛𝚊 𝚜𝚊𝚋𝚛𝚊 𝚔𝚊𝚛𝚘 𝚞𝚙𝚍𝚊𝚝𝚎 𝙷𝚘 𝚗𝚎 𝚓𝚊 𝚛𝚑𝚊 𝚑 Pythonbot_V11.0.9⚡⚡`")
         await asyncio.sleep(5)
 
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -137,7 +137,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit(
-        "🤟✞︎t͛ẞ̸ 𝖑𝖊ɠêɳ̃dẞø✞︎ 𝙸𝚜 𝚘𝚗 𝚞𝚙𝚍𝚊𝚝𝚒𝚗𝚐 𝚝𝚘 𝚕𝚊𝚝𝚎𝚜𝚝 version 2.Ø !!!\n𝚊𝚏𝚝𝚎𝚛 5 𝚖𝚒𝚗 𝚝𝚢𝚙𝚎 `.op` οя `.alive` το ϲнєϲκ ιƒ ι αм οи ѕιя ♣️"
+        "⚡✞︎t͛ẞ̸ Pythonẞø✞︎⚡ 𝙸𝚜 𝚘𝚗 𝚞𝚙𝚍𝚊𝚝𝚒𝚗𝚐 𝚝𝚘 𝚕𝚊𝚝𝚎𝚜𝚝 ⚡version 11.0.9⚡ !!!\n𝚊𝚏𝚝𝚎𝚛 5 𝚖𝚒𝚗 𝚝𝚢𝚙𝚎 `.op` οя `.pyalive` το ϲнєϲκ ιƒ ι αм οи ѕιя ♣️"
     )
     await remote.push(refspec=refspec)
     await tgbot.disconnect()

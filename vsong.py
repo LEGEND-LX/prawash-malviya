@@ -207,3 +207,4 @@ from . import *
 CmdHelp("vsong").add_command(
   'vsong', None, 'search song'
 ).add()
+
