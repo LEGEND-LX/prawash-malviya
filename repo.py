@@ -17,3 +17,6 @@ elif event.query.user_id == bot.uid and query == "repo":
                     [Button.url("♥️ 𝚁𝚎𝚙𝚘 ♥", "https://github.com/LEGEND-LX/PYTHONBOT")],
                     [Button.url("♦️ Relp ♦️", "https://replit.com/@LEGEND-LX/PYTHONBOT-4")],
                   
+CmdHelp("repo").add_command(
+  'afk', '<reply to media>/<or type a reson>', 'Marks you AFK(Away from Keyboard) with reason(if given) also shows afk time. Media also supported.'
+).add()
