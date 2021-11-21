@@ -24,3 +24,5 @@ async def _(event):
         await event.edit(str(a))
     else:
         await event.edit("`{}`: {}".format(input_str, r.text))
+
+              

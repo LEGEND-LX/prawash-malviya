@@ -15,7 +15,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import CMD_HELP
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 logging.basicConfig(
@@ -278,7 +278,7 @@ async def _(event):
         nurl = f"https://del.dog/v/{r['key']}"
         await edit_or_reply(event, "Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl)
         )
-    # This module is modded by @Its_LegendBoy #KeepCredit
+    # This module is modded by @The_LegendBoy #KeepCredit
     else:
         await edit_or_reply(event, "**Making instant view...**")
         async with event.client.conversation(chat) as conv:

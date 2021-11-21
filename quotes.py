@@ -1,7 +1,7 @@
 import random
 from random import choice
 import requests
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 LOVESTR = [
@@ -154,7 +154,7 @@ CHASE_STR = [
 ]
 
 
-LEGENDOSTR = [
+PYTHONOSTR = [
     "Hi !",
     "‘Ello, gov'nor!",
     "What’s crackin’?",

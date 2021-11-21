@@ -3,7 +3,7 @@ from telethon.tl.types import ChatBannedRights
 
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import errors_handler, register
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -11,7 +11,7 @@ DEFAULTUSER = (
     str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 )
 
-legend = bot.uid
+python = bot.uid
 
 @bot.on(admin_cmd(pattern=r"lock ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"lock ?(.*)", allow_sudo=True))
@@ -96,7 +96,7 @@ async def locks(event):
         await event.client(
             EditChatDefaultBannedRightsRequest(peer=peer_id, banned_rights=lock_rights)
         )
-        await edit_or_reply(event, f"[{DEFAULTUSER}](tg://user?id={legend}) Locked `{what}` \n__Cause its Rest Time Nimba!!__")
+        await edit_or_reply(event, f"[{DEFAULTUSER}](tg://user?id={python}) Locked `{what}` \n__Cause its Rest Time Nimba!!__")
     except BaseException as e:
         await edit_or_reply(event, f"`Do I have proper rights for that ??`\n**Error:** {str(e)}")
         return
@@ -187,7 +187,7 @@ async def rem_locks(event):
                 peer=peer_id, banned_rights=unlock_rights
             )
         )
-        await edit_or_reply(event, f"[{DEFAULTUSER}](tg://user?id={legend}) Unlocked `{what}` \n__Now Start Chit Chat !!__")
+        await edit_or_reply(event, f"[{DEFAULTUSER}](tg://user?id={python}) Unlocked `{what}` \n__Now Start Chit Chat !!__")
     except BaseException as e:
         await edit_or_reply(event, f"`Do I have proper rights for that ??`\n**Error:** {str(e)}")
         return

@@ -1,18 +1,18 @@
-# Made By @Its_LegendBoy. Keep Credit if you are gonna copy paste it. LOL NOOBS....
+# Made By @Legendl_Mr-Hacker. Keep Credit if you are gonna copy paste it. LOL NOOBS....
 # Exclusive plugins from my channel @testpy12
 # Also some from my bro's channel @pyforub......(sawan me lagg gai aag🔥🔥🔥🔥🔥🔥🔥🔥)
-# Now in LEGENDBOT....
+# Now in    PYTHONBOT....
 
 import random
 from asyncio import sleep
 import asyncio
 from userbot import CMD_HELP, ALIVE_NAME
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PYTHON User"
 
-legend = bot.uid
+python = bot.uid
 
 @bot.on(admin_cmd(pattern=r"sing$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"sing$", allow_sudo=True))

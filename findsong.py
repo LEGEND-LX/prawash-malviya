@@ -33,3 +33,4 @@ async def _(event):
 CmdHelp("findsong").add_command(
 'findsong', None, '1st send song voice then reply to it and send .findsong'
 ).add()
+

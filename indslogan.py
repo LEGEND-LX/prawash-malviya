@@ -17,7 +17,7 @@ async def _(event):
     if x==1:
         await event.edit("Inqilab Zindabad \n\n **By : Bhagat Singh**")
     if x==2:
-        await event.edit("DON'T TRY TO KNOW ABUOT ME I M LEGEND✌️ @Its_LegendBoy\nfrom: @Legend_Userbot")
+        await event.edit("DON'T TRY TO KNOW ABUOT ME I M LEGEND✌️ @The_LegendBoy\nfrom: @Legend_Userbot")
     if x==3:
         await event.edit("Subhash Chandra Bose : Dilli Chalo ")
     if x==4:
@@ -47,3 +47,4 @@ async def _(event):
 CmdHelp("ind slogan").add_command(
   'indslogan', None, 'slogan'
 ).add()
+

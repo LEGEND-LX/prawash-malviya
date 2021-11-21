@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
 from . import *
 
 
-path = "./legendmify/"
+path = "./pythonmify/"
 if not os.path.isdir(path):
     os.makedirs(path)
 
@@ -25,12 +25,12 @@ async def _(event):
     _reply = await event.get_reply_message()
     msg = event.pattern_match.group(1)
     if not (_reply and (_reply.media)):
-        legen_ = await eod(event, "`Can't memify this 🥴`")
+        pytho_ = await eod(event, "`Can't memify this 🥴`")
         return
-    legend = await _reply.download_media()
-    if legend.endswith((".tgs")):
-        legen_ = await eor(event, "**Memifying 🌚🌝**")
-        cmd = ["lottie_convert.py", legend, "pic.png"]
+    python = await _reply.download_media()
+    if python.endswith((".tgs")):
+        pytho_ = await eor(event, "**Memifying 🌚🌝**")
+        cmd = ["lottie_convert.py", python, "pic.png"]
         file = "pic.png"
         process = await asyncio.create_subprocess_exec(
             *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -38,14 +38,14 @@ async def _(event):
         stdout, stderr = await process.communicate()
         stderr.decode().strip()
         stdout.decode().strip()
-    elif legend.endswith((".webp", ".png")):
-        legen_ = await eor(event, "**Memifying 🌚🌝**")
-        pic = Image.open(legend)
+    elif python.endswith((".webp", ".png")):
+        pytho_ = await eor(event, "**Memifying 🌚🌝**")
+        pic = Image.open(python)
         pic.save("pic.png", format="PNG", optimize=True)
         file = "pic.png"
     else:
         hel_ = await eor(event, "**Memifying 🌚🌝**")
-        img = cv2.VideoCapture(legend)
+        img = cv2.VideoCapture(python)
         tal, semx = img.read()
         cv2.imwrite("pic.png", semx)
         file = "pic.png"
@@ -53,9 +53,9 @@ async def _(event):
     await bot.send_file(
         event.chat_id, output, force_document=False, reply_to=event.reply_to_msg_id
     )
-    await legen_.delete()
+    await pytho_.delete()
     try:
-        os.remove(legend)
+        os.remove(python)
         os.remove(file)
     except BaseException:
         pass
@@ -65,8 +65,8 @@ async def _(event):
 @bot.on(admin_cmd(pattern="doge(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="doge(?: |$)(.*)", allow_sudo=True))
 async def nope(lip):
-    legend = lip.pattern_match.group(1)
-    if not legend:
+    python = lip.pattern_match.group(1)
+    if not python:
         if lip.is_reply:
             (await lip.get_reply_message()).message
         else:
@@ -75,17 +75,17 @@ async def nope(lip):
             else:
                 return await eor(lip, "Doge need some text to make sticker.")
 
-    troll = await bot.inline_query("DogeStickerBot", f"{(deEmojify(legend))}")
+    troll = await bot.inline_query("DogeStickerBot", f"{(deEmojify(python))}")
     if troll:
         await lip.delete()
-        legen_ = await troll[0].click(Config.LOGGER_ID)
-        if legen_:
+        pytho_ = await troll[0].click(Config.LOGGER_ID)
+        if pytho_:
             await bot.send_file(
                 kraken.chat_id,
                 legen_,
                 caption="",
             )
-        await legen_.delete()
+        await pytho_.delete()
     else:
      await eod(lip, "Error 404:  Not Found")
 
@@ -93,8 +93,8 @@ async def nope(lip):
 @bot.on(admin_cmd(pattern="gg(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="gg(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
-    legend = kraken.pattern_match.group(1)
-    if not legend:
+    python = kraken.pattern_match.group(1)
+    if not python:
         if kraken.is_reply:
             (await kraken.get_reply_message()).message
         else:
@@ -103,17 +103,17 @@ async def nope(kraken):
             else:
                 return await eor(kraken, "Googlax need some text to make sticker.")
 
-    troll = await bot.inline_query("GooglaxBot", f"{(deEmojify(legend))}")
+    troll = await bot.inline_query("GooglaxBot", f"{(deEmojify(python))}")
     if troll:
         await kraken.delete()
-        legen_ = await troll[0].click(Config.LOGGER_ID)
+        pytho_ = await troll[0].click(Config.LOGGER_ID)
         if hel_:
             await bot.send_file(
                 kraken.chat_id,
-                legen_,
+                pytho_,
                 caption="",
             )
-        await legen_.delete()
+        await pytho_.delete()
     else:
      await eod(kraken, "Error 404:  Not Found")
 
@@ -121,8 +121,8 @@ async def nope(kraken):
 @bot.on(admin_cmd(pattern="honk(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="honk(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
-    legend = kraken.pattern_match.group(1)
-    if not legend:
+    python = kraken.pattern_match.group(1)
+    if not python:
         if kraken.is_reply:
             (await kraken.get_reply_message()).message
         else:
@@ -131,17 +131,17 @@ async def nope(kraken):
             else:
                 return await eor(kraken, "Honka need some text to make sticker.")
 
-    troll = await bot.inline_query("honka_says_bot", f"{(deEmojify(legend))}.")
+    troll = await bot.inline_query("honka_says_bot", f"{(deEmojify(python))}.")
     if troll:
         await kraken.delete()
-        legen_ = await troll[0].click(Config.LOGGER_ID)
-        if legen_:
+        pytho_ = await troll[0].click(Config.LOGGER_ID)
+        if pytho_:
             await bot.send_file(
                 kraken.chat_id,
-                legen_,
+                pytho_,
                 caption="",
             )
-        await legen_.delete()
+        await pytho_.delete()
     else:
      await eod(kraken, "Error 404:  Not Found")
 

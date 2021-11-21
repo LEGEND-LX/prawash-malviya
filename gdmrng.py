@@ -15,9 +15,10 @@ async def xd(event):
             except:
                 lol += 1
                 pass
-    await event.reply(f"I hope your morning is as bright and gorgeous as your smile.[Lêɠêɳ̃dẞø†](https://t.me/Its_LegendBot)")
+    await event.reply(f"I hope your morning is as bright and gorgeous as your smile.[Lêɠêɳ̃dẞø†](https://t.me/Official_LegendBot)")
 
 
 CmdHelp("gm").add_command(
     "gdmrng", None, "Wishs Good moning in all groups just one command"
 ).add()
+

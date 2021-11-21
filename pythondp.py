@@ -1,4 +1,3 @@
-
 import asyncio
 import os
 import random
@@ -10,32 +9,21 @@ from pySmartDL import SmartDL
 from telethon.tl import functions
 from PYTHONBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
-FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+FONT_FILE_TO_USE = "./userbot/helpers/styles/Voice In My Head_080621160753.otf"
 
 # Add telegraph media links of profile pics that are to be used
-TELEGRAPH_MEDIA_LINKS = [
-    "https://telegra.ph/file/2f2035b4e8ab1dc6efc3d.jpg",
-    "https://telegra.ph/file/a2b6e3781680a6d85f842.jpg",
-    "https://telegra.ph/file/18e4d7c45e49ad9340e3c.jpg",
-    "https://telegra.ph/file/66205f168d8c2a0bbaa43.jpg",
-    "https://telegra.ph/file/66205f168d8c2a0bbaa43.jpg",
-    "https://telegra.ph/file/66205f168d8c2a0bbaa43.jpg",
-    "https://telegra.ph/file/3072bb5fd2c8dd8e9da60.jpg",
-    "https://telegra.ph/file/24f84ab213b177ef43d6e.jpg",
-    "https://telegra.ph/file/6e372beae3cda13117ec7.jpg",
-    "https://telegra.ph/file/70e671947a35f8b8a5d0e.jpg",
-    "https://telegra.ph/file/628fafe3fea4371e30e3c.jpg",
-    "https://telegra.ph/file/f94c8aa7c8425e4b4346c.jpg",
-    "https://telegra.ph/file/bc96df71964af1a4ac625.jpg",
-    "https://telegra.ph/file/bc96df71964af1a4ac625.jpg",
-    "https://telegra.ph/file/bc96df71964af1a4ac625.jpg",
-    "https://telegra.ph/file/c7b64ed41f6113f00415e.jpg",
-    "https://telegra.ph/file/c7b64ed41f6113f00415e.jpg",
-    "https://telegra.ph/file/c7b64ed41f6113f00415e.jpg",
+TELEGRAPH_MEDIA_LINKS = [ 
+    "https://telegra.ph/file/5692988b0d53ae24da716.jpg",
+    "https://telegra.ph/file/5692988b0d53ae24da716.jpg",
+    "https://telegra.ph/file/be0cc8912bece1b1e4783.jpg",
+    "https://telegra.ph/file/09d8de43bca126d981dfa.jpg",
+    "https://telegra.ph/file/e70f5639c500090f2789a.jpg",
+    "https://telegra.ph/file/9e0f911538abd6f5fb54c.jpg",
+    "https://telegra.ph/file/9e0f911538abd6f5fb54c.jpg",
 ]
 
 
-@borg.on(admin_cmd(pattern="inddp ?(.*)"))
+@borg.on(admin_cmd(pattern="ldp ?(.*)"))
 async def autopic(event):
     while True:
         piclink = random.randint(0, len(TELEGRAPH_MEDIA_LINKS) - 1)
@@ -67,6 +55,6 @@ async def autopic(event):
             await asyncio.sleep(60)
         except:
             return
-CmdHelp("independp").add_command(
-       'inddp', None, 'Starts autopic of Independence & now wait for 5 min'
+CmdHelp("pythondp").add_command(
+       'ldp', None, 'Starts autodp of Python-lx'
 ).add()

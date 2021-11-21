@@ -36,3 +36,4 @@ async def _(event):
 CmdHelp("нαρϐιяτн").add_command(
 	'happybirhtday', None, 'Use and See'
 ).add()
+

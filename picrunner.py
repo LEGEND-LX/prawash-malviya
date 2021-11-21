@@ -9,7 +9,7 @@ import urllib
 
 import requests
 from telethon.tl import functions
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -69,8 +69,8 @@ async def animepp():
 @bot.on(admin_cmd(pattern="ppr ?(.*)", outgoing=True))
 async def main(event):
     await event.edit(
-        "**Starting Profile Pic Runner by @Legend_Userbot ..**"
-    )  # Owner @Its_LegendBoy
+        "**Starting Profile Pic Runner by @Python_Userbot_Support ..**"
+    )  # Owner @Legendl_Mr_Hacker
     while True:
         try:
             await animepp()

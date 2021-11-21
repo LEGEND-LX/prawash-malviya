@@ -15,10 +15,12 @@ from userbot.cmdhelp import CmdHelp
 
 
 
-CmdHelp("gτ мємѕ").add_command(
+CmdHelp("got memes").add_command(
     'gotm', None, 'Use And See'
 ).add_warning(
-  "✅ Harmless Module."
+    '✅ Harmless Module.'
+).add_type(
+    'Addons'
 ).add()
 
 
@@ -155,3 +157,5 @@ async def _(event):
     if x==30:
 
         await event.edit("[For that friend of yours who does not like loud music and head banging...](https://telegra.ph/file/acbce070d3c52b921b2bd.jpg)", link_preview=True)
+
+        

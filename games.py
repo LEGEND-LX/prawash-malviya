@@ -1,10 +1,10 @@
-# Made by @Its_LegendBoy for @Legend_Userbot
-# Now in LEGENDBOT
-# Thanks to LegendBot
+# Made by @Leegendl_Mr_Hacker for @Python_Userbot_Support
+# Now in PYTHONBOT
+# Thanks to PythonBot
 
 import asyncio
 from telethon import events
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))

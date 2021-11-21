@@ -42,3 +42,5 @@ async def glitch(event):
     for starky in (pathsn, photolove):
         if starky and os.path.exists(starky):
             os.remove(starky)
+
+            

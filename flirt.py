@@ -35,3 +35,4 @@ async def _(event):
 CmdHelp("flirt").add_command(
   "flirth", None, "Try With Girl"
 ).add()
+

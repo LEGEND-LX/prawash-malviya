@@ -10,7 +10,7 @@ OS = [
     "IF U NEED ANY HELP U CAN TYPE WHEN HE COME BACK HE WILL REPLY U",
     "PLS DONT DISTURB HIM LEGEND IS BUSY NOW WHEN HE COME BACK HE REPLY U",
     "DON'T BREAK THE HEART OF THE HACKER BCOZ U DON'T KNOW WHAT WILL HAPPN TN",
-    "I AM 『🔱🇱 🇪 🇬 🇪 🇳 🇩 🔱』➙𖤍 𝕄ℝ.ℍ𝔸ℂ𝕂𝔼ℝ࿐",
+    "I AM 『🔱🇱 🇪 🇬 🇪 🇳 🇩 L X 🔱』➙𖤍 𝕄ℝ.ℍ𝔸ℂ𝕂𝔼ℝ࿐",
     "I KNOW U ARE WAITING FOR ME I WILL BE BACK SOON",
 ]
 
@@ -45,15 +45,15 @@ async def _(event):
         e = b.id
         c = b.first_name
         username = f"[{c}](tg://user?id={e})"
-        event = await edit_or_reply(event, "LEGEND")
+        event = await edit_or_reply(event, "PYTHON")
         que[e] = []
         qeue = que.get(e)
         appendable = [e]
         qeue.append(appendable)
-        await event.edit(f"『🔱 LEGEND ™🔱』IS STARTING GAME")
+        await event.edit(f"『🔱 LEGEND-LX ™🔱』IS STARTING GAME")
     else:
         user = event.pattern_match.group(1)
-        event = await edit_or_reply(event, "LEGEND")
+        event = await edit_or_reply(event, "PYTHON")
         a = await event.client.get_entity(user)
         e = a.id
         c = a.first_name
@@ -62,7 +62,7 @@ async def _(event):
         qeue = que.get(e)
         appendable = [e]
         qeue.append(appendable)
-        await event.edit(f"LEGEND {ALIVE_NAME}")
+        await event.edit(f"PYTHON {ALIVE_NAME}")
 
 
 @bot.on(admin_cmd(pattern="lstops(?: |$)(.*)"))
@@ -90,11 +90,11 @@ async def _(event):
         username = f"[{c}](tg://user?id={e})"
         queue = que.get(e)
         queue.pop(0)
-        await event.edit(f"LEGEND STOPED RAID {ALIVE_NAME}")
+        await event.edit(f"PYTHON STOPED RAID {ALIVE_NAME}")
         
         
 CmdHelp("lpersonal").add_command(
-    'lstarts', None, 'Reply to him or her to start legend personal file'
+    'lstarts', None, 'Reply to him or her to start legend-lx personal file'
 ).add_command(
-    'lstops', None, 'Reply To her Ya him To stop legend personal file'
+    'lstops', None, 'Reply To her Ya him To stop legend-lx personal file'
 ).add()

@@ -1,8 +1,8 @@
-# PLUGIN MADE BY @Its_LegendBoy FOR LEGENDBOT
+# PLUGIN MADE BY @Legendl_Mr_Hacker FOR PYTHONBOT
 # KEEP CREDITS ELSE GAY
 
 import random, re
-from LEGENDBOT.utils import admin_cmd
+from PYTHONBOT.utils import admin_cmd
 import asyncio
 from telethon import events
 
@@ -102,3 +102,5 @@ async def _(event):
       😘😘😘😘😘😘
             😘😘😘😘""")
       
+
+          

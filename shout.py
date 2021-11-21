@@ -1,4 +1,4 @@
-from LEGENDBOT.utils import *
+from PYTHONBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 

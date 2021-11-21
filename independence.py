@@ -1,10 +1,10 @@
 import asyncio
 from userbot import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PYTHON"
 
 
 @borg.on(admin_cmd(pattern="independence$"))
@@ -26,7 +26,7 @@ async def _(event):
         "[ƒοя υ](https://telegra.ph/file/66205f168d8c2a0bbaa43.jpg)",
         "[нαρργ ιи∂ρєи∂єиϲє ∂αγ](https://t.me/Legend_Userbot)",
     ]
-    for i in animation_ttl:  # By @Its_LegendBoy LegendBot
+    for i in animation_ttl:  # By @Legendl_Mr_Hacker PythonBot
 
         await asyncio.sleep(animation_interval)
         await event.edit(

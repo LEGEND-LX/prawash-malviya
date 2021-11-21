@@ -38,3 +38,5 @@ async def _(event):
         )
         await fwd_message.delete()
         await event.delete()
+
+        

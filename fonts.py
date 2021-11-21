@@ -1,7 +1,7 @@
-# Added more fonts by @Its_LegendBoy
+# Added more fonts by @The_LegendBoy
 # Ported from saitama i guess
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 normiefont = [
@@ -291,4 +291,4 @@ CmdHelp("fonts").add_command(
 ).add_command(
   'zal', '<text>', 'Zagolifies your text'
 ).add()
-#LEGENDBOT_Op
+#PYTHONBOT_LX

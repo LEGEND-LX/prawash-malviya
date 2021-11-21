@@ -4,13 +4,13 @@ import time
 import asyncio
 import requests
 from telethon import events
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================
 
 
-LEGENDOSTR = [
+PYTHONOSTR = [
     "`Hi !`",
     "`‘Ello, gov'nor!`",
     "`What’s crackin’?`",
@@ -212,4 +212,6 @@ CmdHelp("noice").add_command(
   "nopee", None, "Use and see"
 ).add_command(
   "Okk", None, "Ohh Ok"
+).add_type(
+  "Adons"
 ).add()

@@ -54,7 +54,7 @@ async def _(event):
         await event.edit(f"『🔱꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂🔱』IS STARTING GAME")
     else:
         user = event.pattern_match.group(1)
-        event = await edit_or_reply(event, "LEGEND")
+        event = await edit_or_reply(event, "PYTHON")
         a = await event.client.get_entity(user)
         e = a.id
         c = a.first_name
@@ -63,7 +63,7 @@ async def _(event):
         qeue = que.get(e)
         appendable = [e]
         qeue.append(appendable)
-        await event.edit(f"LEGEND {ALIVE_NAME}")
+        await event.edit(f"PYTHON {ALIVE_NAME}")
 
 
 @bot.on(admin_cmd(pattern="Rstops(?: |$)(.*)"))
@@ -91,11 +91,11 @@ async def _(event):
         username = f"[{c}](tg://user?id={e})"
         queue = que.get(e)
         queue.pop(0)
-        await event.edit(f"LEGEND ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ STOPED RAID {ALIVE_NAME}")
+        await event.edit(f"PYTHON ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ STOPED RAID {ALIVE_NAME}")
         
         
 CmdHelp("rpersonal").add_command(
-    'Rstarts', None, 'Reply to him or her to start legend ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ personal file'
+    'Rstarts', None, 'Reply to him or her to start legend-Lx ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ personal file'
 ).add_command(
-    'Rstops', None, 'Reply To her Ya him To stop legend ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ personal file'
+    'Rstops', None, 'Reply To her Ya him To stop legend-lx ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ personal file'
 ).add()
