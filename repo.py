@@ -1,7 +1,13 @@
-from telethon 
-telethon clinet input
-form PYTHONBOT.ultils 
+import asyncio
+import datetime
+from datetime import datetime
 
+from telethon import events
+from telethon.tl import functions, types
+from userbot import CMD_HELP
+from userbot import ALIVE_NAME, PYTHONversion
+from PYTHONBOT.utils import admin_cmd, edit_or_reply
+from userbot.cmdhelp import CmdHelp
 
 elif event.query.user_id == bot.uid and query == "repo":
             result = builder.article(
