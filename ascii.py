@@ -5,10 +5,10 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import ALIVE_NAME, CMD_HELP
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PYTHON User"
 
 USERID = bot.uid
 
@@ -41,14 +41,14 @@ async def _(event):
             await event.client.send_message(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await legend.edit("`Please unblock @asciiart_bot and try again`")
+            await python.edit("`Please unblock @asciiart_bot and try again`")
             return
         if response.text.startswith("Forward"):
-            await legend.edit(
+            await python.edit(
                 "`can you kindly disable your forward privacy settings for good?`"
             )
         else:
-            await legend.delete()
+            await python.delete()
             await event.client.send_file(
                 event.chat_id,
                 response.message.media,
@@ -74,7 +74,7 @@ async def _(event):
     if reply_message.sender.bot:
         await edit_or_reply(event, "Reply to actual мє∂ια message.😒🤐")
         return
-    legend = await edit_or_reply(event, "`Processing`")
+    python = await edit_or_reply(event, "`Processing`")
     async with event.client.conversation(chat) as conv:
         try:
             await conv.send_message("/start")
@@ -84,9 +84,9 @@ async def _(event):
             pic = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await legend.edit("Please unblock @Lines50Bot and try again")
+            await python.edit("Please unblock @Lines50Bot and try again")
             return
-        await legend.delete()
+        await python.delete()
         await event.client.send_file(
             event.chat_id,
             pic,

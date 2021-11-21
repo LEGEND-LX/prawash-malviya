@@ -61,7 +61,7 @@ async def formatJSON(outData):
         msg += f"\n**Year** : {jsonData['startDate']['year']}"
         msg += f"\n**Score** : {jsonData['averageScore']}"
         msg += f"\n**Duration** : {jsonData['duration']} min\n\n"
-        # https://t.me/Legend_Userbot/19496
+        # https://t.me/Python_Userbot_Support)/19496
         cat = f"{jsonData['description']}"
         msg += " __" + re.sub("<br>", "\n", cat) + "__"
         return msg
@@ -82,8 +82,8 @@ async def anilist(event):
 @bot.on(admin_cmd(pattern="anime(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="anime(?: |$)(.*)", allow_sudo=True))
 async def nope(lege):
-    legend = lege.pattern_match.group(1)
-    if not legend:
+    python = lege.pattern_match.group(1)
+    if not python:
         if lege.is_reply:
             (await lege_.get_reply_message()).message
         else:
@@ -105,8 +105,8 @@ async def nope(lege):
 @bot.on(admin_cmd(pattern="manga(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="manga(?: |$)(.*)", allow_sudo=True))
 async def nope(lege_):
-    legend = lege_.pattern_match.group(1)
-    if not legend:
+    python = lege_.pattern_match.group(1)
+    if not python:
         if lege_.is_reply:
             (await lege_.get_reply_message()).message
         else:
@@ -114,7 +114,7 @@ async def nope(lege_):
             )
             return
 
-    troll = await bot.inline_query("AniFluidbot", f".manga {(deEmojify(legend))}")
+    troll = await bot.inline_query("AniFluidbot", f".manga {(deEmojify(python))}")
 
     await troll[0].click(
         lege_.chat_id,
@@ -128,8 +128,8 @@ async def nope(lege_):
 @bot.on(admin_cmd(pattern="character(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="character(?: |$)(.*)", allow_sudo=True))
 async def nope(lege_):
-    legend = lege_.pattern_match.group(1)
-    if not legend:
+    python = lege_.pattern_match.group(1)
+    if not python:
         if lege_.is_reply:
             (await lege_.get_reply_message()).message
         else:
@@ -137,7 +137,7 @@ async def nope(lege_):
             )
             return
 
-    troll = await bot.inline_query("AniFluidbot", f".character {(deEmojify(legend))}")
+    troll = await bot.inline_query("AniFluidbot", f".character {(deEmojify(python))}")
 
     await troll[0].click(
         lege_.chat_id,
@@ -146,7 +146,7 @@ async def nope(lege_):
         hide_via=True,
     )
     await lege_.delete()
-#ℓєgєи∂
+#PYTHON
 
 CmdHelp("anime").add_command(
   "anime", "<anime name>", "Searches for the given anime and sends the details.", "anime violet evergarden"

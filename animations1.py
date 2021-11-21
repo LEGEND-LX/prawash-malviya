@@ -4,10 +4,10 @@ from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PYTHON"
 
 @bot.on(admin_cmd(pattern=f"indflag$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"indflag$", allow_sudo=True))
@@ -164,9 +164,9 @@ async def _(event):
         replied_user.user.first_name
         replied_user.user.username
         idd = reply_message.sender_id
-        if idd == 1938996006:
+        if idd == 2082798662:
             await event.edit(
-                "This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [Its_LegendBoy](https://t.me/Its_LegendBoy) __to release your account__😏"
+                "This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [The_LegendBoy](https://t.me/The_LegendBoy) __to release your account__😏"
             )
         else:
             await event.edit("`K i l l i n g . . . . . . .`")
@@ -414,4 +414,6 @@ CmdHelp("animation1").add_command(
   'gnt', None, 'Cool Good Night Animation'
 ).add_command(
   'muths', None, 'Fapping✊'
+).add_type(
+   'Addons'
 ).add()

@@ -1,6 +1,6 @@
 import asyncio
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -101,9 +101,9 @@ async def _(event):
         
 @bot.on(admin_cmd(pattern="istar$", outgoing=True))
 @bot.on(sudo_cmd(pattern="istar$", allow_sudo=True))
-async def ammastar(LEGENDstar):
+async def ammastar(PYTHONstar):
   
-    if LEGENDstar.fwd_from:
+    if PYTHONstar.fwd_from:
       
         return
       
@@ -111,7 +111,7 @@ async def ammastar(LEGENDstar):
     
     animation_ttl = range(0, 11)
     
-    await edit_or_reply(LEGENDstar, "I am A Star")
+    await edit_or_reply(PYTHONstar, "I am A Star")
     
     animation_chars = [
         "I Party like a rockstar",
@@ -125,7 +125,7 @@ async def ammastar(LEGENDstar):
       
         await asyncio.sleep(animation_interval)
         
-        await LEGENDstar.edit(animation_chars[i % 11])
+        await PYTHONstar.edit(animation_chars[i % 11])
     
         
 @bot.on(admin_cmd(pattern=r"lmoon", outgoing=True))
@@ -156,8 +156,8 @@ async def test(event):
     )
 
 
-@bot.on(admin_cmd(pattern=r"hii", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"hii", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"^Hii", outgoing=True))
+@bot.on(sudo_cmd(pattern=r"^Hii", allow_sudo=True))
 async def hi(event):
     if event.fwd_from:
         return
@@ -201,15 +201,15 @@ async def _(event):
 
     animation_chars = [
          "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n[👉](https://t.me/Its_LegendBoy)⬜⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬛[👉](https://t.me/Its_LegendBoy)⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜[👆](https://t.me/Its_LegendBoy)⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜[👆](https://t.me/Its_LegendBoy)⬜⬜⬜⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬛[👉](https://t.me/Its_LegendBoy)⬜⬜⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬛⬛[👉](https://t.me/Its_LegendBoy)⬜⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜🔲\n⬜⬛⬛⬛[👉](https://t.me/Its_LegendBoy)⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜[👆](https://t.me/Its_LegendBoy)⬜🔲\n⬜⬛⬛⬛⬛⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬛[👉](https://t.me/Its_LegendBoy)🔲\n⬜⬛⬛⬛⬛⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n[👉](https://t.me/The_LegendBoy)⬜⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬛[👉](https://t.me/The_LegendBoy)⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜[👆](https://t.me/The_LegendBoy)⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜[👆](https://t.me/The_LegendBoy)⬜⬜⬜⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬛[👉](https://t.me/The_LegendBoy)⬜⬜⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/LEGEND-OS/LEGENDBOT)\n⬜⬛⬛[👉](https://t.me/The_LegendBoy)⬜⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜🔲\n⬜⬛⬛⬛[👉](https://t.me/The_LegendBoy)⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜[👆](https://t.me/The_LegendBoy)⬜🔲\n⬜⬛⬛⬛⬛⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬛[👉](https://t.me/The_LegendBoy)🔲\n⬜⬛⬛⬛⬛⬜⬜\n⬜⬛⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
          "⬛⬛⬛⬛⬛⬛⬛\n⬛⬛⬛⬛⬛⬛⬛\n⬛⬛⬛⬛⬛⬛⬛\n⬛⬛⬛⬛⬛⬛🔳\n⬛⬛⬛⬛⬛⬛⬛\n⬛⬛⬛⬛⬛⬛⬛\n⬛⬛⬛⬛⬛⬛⬛",
     ]
 
@@ -275,7 +275,7 @@ CmdHelp("animation4").add_command(
 ).add_command(
   "cheer", None, "Use and see"
 ).add_command(
-  "hii", None, "Use and see"
+  "hoi", None, "Use and see"
 ).add_command(
   "city", None, "Use and see"
 ).add_command(
@@ -292,4 +292,8 @@ CmdHelp("animation4").add_command(
   "fstyle", "<text>", "Prints the given text in 'F' format"
 ).add_command(
   "wahack", None, "Whatsapp Hack animation"
+).add_type(
+     "Addons"
 ).add()
+
+#pythonbot

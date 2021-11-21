@@ -1,8 +1,8 @@
 import time
 
 from telethon import version
-from userbot import ALIVE_NAME, StartTime, LEGENDversion
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import ALIVE_NAME, StartTime, PYTHONversion
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from . import *
 async def reply_id(event):
@@ -14,10 +14,10 @@ async def reply_id(event):
     return reply_to_id
 
 
-DEFAULTUSER = ALIVE_NAME or "ℓєgєи∂ϐοτ"
-LEGEND_IMG = Config.AWAKE_PIC
-CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "ℓєgєи∂ Choice ℓєgєи∂ϐοτ"
-CUSTOM_YOUR_GROUP =Config.YOUR_GROUP or "@Legend_Userbot"
+DEFAULTUSER = ALIVE_NAME or "PYTHONBOT"
+PYTHON_IMG = Config.AWAKE_PIC
+CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "ℓєgєи∂ Choice Pythonϐοτ"
+CUSTOM_YOUR_GROUP =Config.YOUR_GROUP or "@Python_Userbot_Support"
 
 USERID = bot.uid
 
@@ -62,32 +62,43 @@ async def amireallyalive(event):
         return
     reply_to_id = await reply_id(event)
 
-    if  LEGEND_IMG:
-        LEGEND_caption = f"**{mention}**\n"
+    if  PYTHON_IMG:
+        PYTHON_caption = f"**{mention}**\n"
         
-        LEGEND_caption += f"~~~~~~~~~~~~~~~~~~~~~~~\n"
-        LEGEND_caption += f"     💫 ✞︎t͛ẞ̸ 𝖑𝖊ɠêɳ̃dẞø✞︎ ιѕ αωακє 💫\n"
-        LEGEND_caption += f"•🔥•     : ν2.ο\n"
-        LEGEND_caption += f"•🔥• 𝚃𝙴𝙻𝙴𝚃𝙷𝙾𝙽      : `{version.__version__}`\n"
-        LEGEND_caption += f"•🔥• 𝚄𝙿𝚃𝙸𝙼𝙴         : `{uptime}`\n"
-        LEGEND_caption += f"•🔥• 𝙲𝙷𝙰𝙽𝙽𝙴𝙻        : [𝕮нαииєℓ](t.me/Its_LegendBot)\n"
-        LEGEND_caption += f"•🔥• 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 : {CUSTOM_YOUR_GROUP}\n"   
+        PYTHON_caption += f"~~~~~~~~~~~~~~~~~~~~~~~\n"
+        PYTHON_caption += f"     💫 ✞︎t͛ẞ̸ Pythonẞø✞︎ ιѕ αωακє 💫\n"
+        PYTHON_caption += f"•🔥•LegendBot-Mix    : ν3.0\n"
+        PYTHON_caption += f"•🔥•𝚃𝙴𝙻𝙴𝚃𝙷𝙾𝙽      : `{version.__version__}`\n"
+        PYTHON_caption += f"•🔥•`PYTHON` :  V9.0.8 \n"
+        PYTHON_caption += f"•🔥•`OS:`       : Kali GNU/Linux Rolling x86_64 \n"                                        
+        PYTHON_caption += f"•🔥•𝚄𝙿𝚃𝙸𝙼𝙴         : `{uptime}`\n"
+        PYTHON_caption += f"•🔥•𝙲𝙷𝙰𝙽𝙽𝙴𝙻        : [𝕮нαииєℓ](t.me/Its_LegendBot)\n"
+        PYTHON_caption += f"•🔥•𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 : {CUSTOM_YOUR_GROUP}\n"   
 
         await event.client.send_file(
-            event.chat_id, LEGEND_IMG, caption=LEGEND_caption, reply_to=reply_to_id
+            event.chat_id, PYTHON_IMG, caption=PYTHON_caption, reply_to=reply_to_id
         )
         await event.delete()
     else:
         await edit_or_reply(
             alive,
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-            f"~~~~~~~~~~~~~~~~~~~~~~~ \n"
-            f"         𝕭𝖔𝖙 𝕾𝖙𝖆𝖙𝖚𝖘\n"
-            f"•⚡• 𝕿єℓєτнοи    : `{version.__version__}`\n"
-            f"🇮🇳 ℓєgєи∂ϐοτ  : `{LEGENDversion}`\n"
-            f"🇮🇳 υρτιмє        : `{uptime}`\n"
-            f"🔱 ɱαรƭεɾ        : {mention}\n"
-            f"🔱 σωɳεɾ         : [ℓєgєи∂](t.me/Its_LegendBoy)\n"
+            f"______𝙿𝚈𝚃𝙷𝙾𝙽-𝐔𝐬𝐞𝐫𝐛𝐨𝐭______\n"
+            f"╔════❰🐍 Ⲃⲟⲧ Ⲓⲛϝⲟʀⲙⲁⲧⲓⲟⲛ🐍 ❱═❍⊱❁۪۪¤๋͜\n"
+            f"║╭━━━━━━━━━━━━━━━➣ \n"
+            f"║┣⪼Developer^By┣⪼ [Legend-Lx](t.me/Legendl_Mr_Hacker) \n"
+            f"║┣⪼Edition^Developer^By ┣⪼ [Legend-Os](t.me/The_LegendBoy) \n"
+            f"║┣⪼Ⲟⲱⲛⲉʀ      ┣⪼ [ℓєgєи∂-ℓx](t.me/Legendl_Mr_Hacker) \n"
+            f"║┣⪼Ⲋⲧⲁⲧυⲋ      ┣⪼ Ⲟⲛⳑⲓⲛⲉ\n"
+            f"║┣⪼Ⲃⲟⲧ Ⳳⲉʀⲋⲓⲟⲛ ┣⪼ {mention}\n"
+            f"║┣⪼Ⳙⲣⲧⲓⲙⲉ      ┣⪼  {uptime}\n"
+            f"║┣⪼Ⲃⲟⲧ Ⲣⲓⲛⳋ     ┣⪼  {uptime}\n"   
+            f"║┣⪼Ⲣⲩⲧⲏⲟⲛ       ┣⪼  {PYTHONversion}\n"
+            f"║┣⪼`Os:`        ┣⪼   Kali GNU/Linux Rolling x86_64 \n"                                       
+            f"║┣⪼Ⲧⲉⳑⲉⲧⲏⲟⲛ     ┣⪼  {version.__version__} \n"
+            f"║┣⪼[✨🐍PYTHON┣⪼ 𝐔𝐬𝐞𝐫𝐛𝐨𝐭🐍✨](https://t.me/Python_Userbot_Support)\n"
+            f"║╰━━━━━━━━━━━━━━━➣ \n"
+            f"╚══════════════════❍⊱❁۪۪¤๋͜-  \n"
         )
 
 CmdHelp("awake").add_command(

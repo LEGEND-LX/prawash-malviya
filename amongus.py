@@ -5,9 +5,9 @@ import asyncio
 from userbot.cmdhelp import CmdHelp
 
 from userbot import *
-from LEGENDBOT.utils import *
+from PYTHONBOT.utils import *
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PYTHON User"
 
 
 @bot.on(admin_cmd(pattern="imp(|n) (.*)", outgoing=True))
@@ -15,8 +15,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND User"
 async def _(event):
     if event.fwd_from:
         return
-    legend = bot.uid
-    USERNAME = f"tg://user?id={legend}"
+    python = bot.uid
+    USERNAME = f"tg://user?id={python}"
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
     text1 = await edit_or_reply(event, "Hmm... Looks like Something is wrong here🤔🧐!!")
@@ -58,42 +58,42 @@ async def _(event):
     stcr4 = await event.client.send_file(
         event.chat_id, "CAADAQADLwADnjOcH-wxu-ehy6NRAg"
     )
-    LEGENDevent = await event.reply(f"{name} is ejected.......🤐")
+    PYTHONevent = await event.reply(f"{name} is ejected.......🤐")
     await asyncio.sleep(2)
-    await LEGENDevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
+    await PYTHONevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤඞㅤㅤㅤㅤ ㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤඞㅤㅤㅤㅤ ㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤㅤ ඞㅤㅤㅤㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤ ඞㅤㅤㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤㅤㅤ ඞㅤㅤㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤ ඞㅤㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤㅤㅤㅤ ඞㅤㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤ ඞㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤ ඞㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤ ඞㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤㅤ ඞㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤㅤ ඞㅤㅤ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤㅤㅤ ඞㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤㅤㅤ ඞㅤ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ඞ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ඞ")
     await asyncio.sleep(0.5)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ㅤ")
     await asyncio.sleep(0.2)
     await stcr4.delete()
     if cmd == "":
-        await LEGENDevent.edit(
+        await PYTHONevent.edit(
             f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} was an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
         await asyncio.sleep(4)
-        await LEGENDevent.delete()
+        await PYTHONevent.delete()
         await event.client.send_file(event.chat_id, "CAADAQADLQADnjOcH39IqwyR6Q_0Ag")
     elif cmd == "n":
-        await LEGENDevent.edit(
+        await PYTHONevent.edit(
             f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} was not an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
         await asyncio.sleep(4)
-        await LEGENDevent.delete()
+        await PYTHONevent.delete()
         await event.client.send_file(event.chat_id, "CAADAQADQAADnjOcH-WOkB8DEctJAg")
 
 
@@ -104,34 +104,34 @@ async def _(event):
         return
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
-    LEGENDevent = await edit_or_reply(event, f"{name} is ejected.......")
+    PYTHONevent = await edit_or_reply(event, f"{name} is ejected.......")
     await asyncio.sleep(2)
-    await LEGENDevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
+    await PYTHONevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤඞㅤㅤㅤㅤ ㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤඞㅤㅤㅤㅤ ㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤㅤ ඞㅤㅤㅤㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤ ඞㅤㅤㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤㅤㅤ ඞㅤㅤㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤ ඞㅤㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤㅤㅤㅤ ඞㅤㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤ ඞㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤ ඞㅤㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤ ඞㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤㅤ ඞㅤㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤㅤ ඞㅤㅤ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤㅤㅤ ඞㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤㅤㅤ ඞㅤ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ඞ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ඞ")
     await asyncio.sleep(0.8)
-    await LEGENDevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ㅤ")
+    await PYTHONevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ㅤ")
     await asyncio.sleep(0.2)
     if cmd == "":
-        await LEGENDevent.edit(
+        await PYTHONevent.edit(
             f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} was an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
     elif cmd == "n":
-        await LEGENDevent.edit(
+        await PYTHONevent.edit(
             f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} was not an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
 
@@ -144,4 +144,10 @@ CmdHelp("amongus").add_command(
   'timp', 'name/username', 'Finds imposter without sticker(Text only). Imposter - True'
 ).add_command(
   'timpn', 'name/username', 'Finds imposter without sticker(Text Only). Imposter - False'
+).add_info(
+  "This plugin comes under the fun section because its have funny commands that u can show it to ur friends and have fun"
+).add_warning(
+  "Harmless Module✅"
+).add_type(
+  "Addons"
 ).add()

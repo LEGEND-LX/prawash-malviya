@@ -8,7 +8,7 @@ async def _(event):
     if event.fwd_from:
         return
     event = await edit_or_reply(event, "𝙸 𝚊𝚖 𝚊𝚗𝚐𝚛𝚢 ")
-    deq = deque(list("😡🔥😡🔥😡🔥😡"))
+    deq = deque(list("😡🔥🤬🔥😡🔥🤬🔥😡🔥"))
     for _ in range(50):
         await asyncio.sleep(0.5)
         await event.edit("".join(deq))
@@ -31,8 +31,16 @@ async def _(event):
         deq.rotate(1)
         
 CmdHelp("angry").add_command(
-  "🤬", None, "υѕє αи∂ ѕєє ex - 🤬"
+  "🤬", None, "υѕє it also it describes all about ur felling that u r angry - 🤬"
 ).add_command(
-  "🤣", None, "Use and See"
+  "🤣", None, "funny command use it and see it"
+).add_type(
+  "Official"
+).add_info(
+       "Its Very Useful Module this module explains all about your fellings like (🤬) for ur angry(🤣)friends message is funny "
+).add_warning(
+       "Harmless Module✅"
+).add_type(
+       "Addons"
 ).add()
 

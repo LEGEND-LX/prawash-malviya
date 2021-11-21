@@ -4,10 +4,10 @@ from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PYTHON"
 
 
 @borg.on(admin_cmd(outgoing=True, pattern="bufferedd( (.*)|$)"))
@@ -294,6 +294,8 @@ CmdHelp("animations5").add_command(
 
   'fdance', None, 'Shitty Yooooo animations. Like who wants it.. duhh'
 
+).add_type(
+    "Addons"
 ).add()
 
 

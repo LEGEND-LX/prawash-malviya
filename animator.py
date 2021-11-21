@@ -1,4 +1,4 @@
-#plugin made legend support
+#plugin made PYTHON support
 #keep credits if you are gonna kang it lol
 import asyncio
 from . import *
@@ -6,7 +6,7 @@ from . import *
 import asyncio
 
 from userbot import ALIVE_NAME, CMD_HELP
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

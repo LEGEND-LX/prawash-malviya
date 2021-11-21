@@ -2,11 +2,11 @@ import asyncio
 from collections import deque
 
 from userbot import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PYTHON"
 
 
 @bot.on(admin_cmd(pattern=r"boxs$", outgoing=True))
@@ -457,4 +457,6 @@ CmdHelp("animation2").add_command(
   'hnd', '<your text>', 'A handy animation with the text,'
 ).add_command(
   'padmin', None, 'Prank promote a user'
+).add_type(
+  'Addons'
 ).add()

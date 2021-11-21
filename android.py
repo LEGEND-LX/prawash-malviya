@@ -13,7 +13,7 @@ from requests import get
 from userbot.cmdhelp import CmdHelp
 
 from userbot import *
-from LEGENDBOT.utils import *
+from PYTHONBOT.utils import *
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (
@@ -242,4 +242,10 @@ CmdHelp("android").add_command(
   'specs', '<brand> <device>', 'Get device specifications info.'
 ).add_command(
   'twrp', '<codename>', 'Get latest twrp download for android device.'
+).add_info(
+       "this command description are (magisk(Get latest magisk release))and (device( Get info about android device codename or model)) and (codename(Search for android device codename))and(specs(Get device specifications info))and at last there is(twrp(Get latest twrp download for android device))--all of these commands starts with .(dot)(.)"
+).add_warning(
+       "Harmless Module✅"
+).add_type(
+       "Addons"
 ).add()

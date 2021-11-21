@@ -5,9 +5,9 @@ import requests
 from telethon import functions
 from . import *
 from userbot import ALIVE_NAME, CMD_LIST, SUDO_LIST
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
-perf = "[ †hê Lêɠêɳ̃dẞø† ]"
+perf = "[ IN PYTHONBOT ]"
 
 import requests
 from telethon import functions
@@ -16,12 +16,12 @@ from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot, BotInl
 
 
 msg = f"""
-**⚜ 𝙻𝚎𝚐𝚎𝚗𝚍𝚊𝚛𝚢 𝙰𝚏 𝙻𝚎𝚐𝚎𝚗𝚍𝙱𝚘𝚝 ⚜**
+**⚜ 𝙻𝚎𝚐𝚎𝚗𝚍𝚊𝚛𝚢 𝙰𝚏 PYTHON𝙱𝚘𝚝 ⚜**
 
-  •        [♥️ 𝚁𝚎𝚙𝚘 ♥️](https://github.com/LEGEND-OS/LEGENDBOT)
+  •        [♥️ 𝚁𝚎𝚙𝚘 ♥️](https://github.com/LEGEND-LX/PYTHONBOT-V9.0.8)
   •        [♦️ Deploy ♦️](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FLEGEND-OS%2FLEGENDBOT&template=https%3A%2F%2Fgithub.com%2FLEGEND-OS%2FLEGENDBOT)
 
-  •  ©️ {Legend_channel} ™
+  •  ©️ {Python_channel} ™
 """
 botname = Config.BOT_USERNAME
 
@@ -29,9 +29,9 @@ botname = Config.BOT_USERNAME
 @bot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
 async def repo(event):
     try:
-        legend = await bot.inline_query(botname, "repo")
-        await legend[0].click(event.chat_id)
-        if event.sender_id == Its_LegendBoy:
+        python = await bot.inline_query(botname, "repo")
+        await python[0].click(event.chat_id)
+        if event.sender_id == Legendl_Mr_Hacker:
             await event.delete()
     except (noin, dedbot):
         await eor(event, msg)
@@ -46,13 +46,13 @@ async def _(event):
     chat = "@Botfather"
     if tgbotusername is not None:
         try:
-            results = await event.client.inline_query(tgbotusername, "legendbot_help")
+            results = await event.client.inline_query(tgbotusername, "pythonbot_help")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
         except noinline:
-            legend = await eor(event, "**Inline Mode is disabled.** \n__Turning it on, please wait for a minute...__")
+            python = await eor(event, "**Inline Mode is disabled.** \n__Turning it on, please wait for a minute...__")
             async with bot.conversation(chat) as conv:
                 try:
                     first = await conv.send_message("/setinline")
@@ -63,8 +63,8 @@ async def _(event):
                     sixth = await conv.get_response()
                     await bot.send_read_acknowledge(conv.chat_id)
                 except YouBlockedUserError:
-                    return await legend.edit("Unblock @Botfather first.")
-                await legend.edit(f"**Turned On Inline Mode Successfully.** \n\nDo `{l1}op` again to get the help menu.")
+                    return await python.edit("Unblock @Botfather first.")
+                await python.edit(f"**Turned On Inline Mode Successfully.** \n\nDo `{l1}op` again to get the help menu.")
             await bot.delete_messages(
                 conv.chat_id, [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id]
             )
@@ -74,7 +74,7 @@ async def _(event):
 
 @bot.on(admin_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
-async def legendbott(event):
+async def pythonbott(event):
     if event.fwd_from:
         return
     args = event.pattern_match.group(1).lower()

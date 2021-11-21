@@ -109,4 +109,10 @@ CmdHelp("animal").add_command(
 'dog', None, 'Dog Face'
 ).add_command(
 'spong', None, 'Spong Face'
+).add_info(
+       "Its Very Useful Module Its used for showing some animal characters"
+).add_warning(
+       "Harmless Module✅"
+).add_type(
+       "Addons"
 ).add()

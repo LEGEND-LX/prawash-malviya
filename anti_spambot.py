@@ -1,5 +1,5 @@
 
-#ℓωg∂и∂ϐ∂נ∂
+#PYTHONBOT
 from asyncio import sleep
 
 from requests import get

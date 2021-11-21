@@ -2,10 +2,10 @@ import bs4
 import requests
 
 from userbot import ALIVE_NAME, CMD_HELP
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "✞︎t͛ẞ̸ 𝖑𝖊ɠêɳ̃d"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "✞︎t͛ẞ̸ Python"
 
 
 @bot.on(admin_cmd(pattern="app (.*)"))
