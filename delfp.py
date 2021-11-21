@@ -35,3 +35,5 @@ async def remove_profilepic(delpfp):
     await edit_or_reply(
         delpfp, f"`Successfully deleted {len(input_photos)} profile picture(s).`"
     )
+
+      

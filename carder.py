@@ -6,35 +6,35 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
-from LEGENDBOT import CmdHelp, bot as LEGENDBOT
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT import CmdHelp, bot as PYTHONBOT
 
 
-@LEGENDBOT.on(admin_cmd("gencc$"))
-@LEGENDBOT.on(sudo_cmd("gencc$", allow_sudo=True))
-async def _(LEGENDevent):
-    if LEGENDevent.fwd_from:
+@PYTHONBOT.on(admin_cmd("gencc$"))
+@PYTHONBOT.on(sudo_cmd("gencc$", allow_sudo=True))
+async def _(PYTHONevent):
+    if PYTHONevent.fwd_from:
         return
-    LEGENDcc = Faker()
-    LEGENDname = LEGENDcc.name()
-    LEGENDadre = LEGENDcc.address()
-    LEGENDcard = LEGENDcc.credit_card_full()
+    PYTHONcc = Faker()
+    PYTHONname = PYTHONcc.name()
+    PYTHONadre = PYTHONcc.address()
+    PYTHONcard = PYTHONcc.credit_card_full()
     
-    await edit_or_reply(LEGENDevent, f"__**👤 NAME :- **__\n`{LEGENDname}`\n\n__**🏡 ADDRESS :- **__\n`{LEGENDadre}`\n\n__**💸 CARD :- **__\n`{LEGENDcard}`")
+    await edit_or_reply(PYTHONevent, f"__**👤 NAME :- **__\n`{PYTHONname}`\n\n__**🏡 ADDRESS :- **__\n`{PYTHONadre}`\n\n__**💸 CARD :- **__\n`{PYTHONcard}`")
     
 
-@LEGENDBOT.on(admin_cmd(pattern="bin ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="bin ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    PYTHON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/bin {LEGEND_input}")
+              await event.client.send_message(chat, f"/bin {PYTHON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -44,18 +44,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@LEGENDBOT.on(admin_cmd(pattern="vbv ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="vbv ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    PYTHON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/vbv {LEGEND_input}")
+              await event.client.send_message(chat, f"/vbv {PYTHON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -65,18 +65,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
     
     
-@LEGENDBOT.on(admin_cmd(pattern="key ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="key ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    PYTHON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/key {LEGEND_input}")
+              await event.client.send_message(chat, f"/key {PYTHON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -86,18 +86,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
  
   
-@LEGENDBOT.on(admin_cmd(pattern="iban ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="iban ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    PYTHON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/iban {LEGEND_input}")
+              await event.client.send_message(chat, f"/iban {PYTHON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -107,18 +107,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
     
-@LEGENDBOT.on(admin_cmd(pattern="ccheck ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="ccheck ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    PYTHON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/ss {LEGEND_input}")
+              await event.client.send_message(chat, f"/ss {PYTHON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -128,18 +128,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
              
              
-@LEGENDBOT.on(admin_cmd(pattern="ccbin ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="ccbin ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    PYTHON_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
-    await event.edit(f"Trying to generate CC from the given bin `{LEGEND_input}`")
+    await event.edit(f"Trying to generate CC from the given bin `{PYTHON_input}`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/gen {LEGEND_input}")
+              await event.client.send_message(chat, f"/gen {PYTHON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")

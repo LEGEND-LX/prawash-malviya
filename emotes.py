@@ -79,3 +79,4 @@ CmdHelp("emotes").add_command(
 ).add_command(
    'bye <emoji>', None, 'Try it yourself'
 ).add()
+

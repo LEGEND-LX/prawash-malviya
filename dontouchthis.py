@@ -30,3 +30,5 @@ async def batch_upload(event):
         await event.edit("Directory Not Found.")
         return
     await event.edit("Successfull.")
+
+      

@@ -603,3 +603,4 @@ from userbot.cmdhelp import CmdHelp
 CmdHelp("biblical").add_command(
    'bbl', None, 'Say Something From Holy Bible'
 ).add() 
+

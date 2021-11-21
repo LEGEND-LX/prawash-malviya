@@ -5,7 +5,7 @@ CmdHelp("englishflirt").add_command(
 import asyncio
 import random
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern=r"rflirt$", outgoing=True))
@@ -53,3 +53,5 @@ async def _(event):
         await event.edit(
             "Can you kiss me on the cheek so I can at least say a cute girl kissed me tonight?"
         )
+
+        

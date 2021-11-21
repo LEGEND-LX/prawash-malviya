@@ -1,11 +1,11 @@
-# Made by @Its_LegendBoy
+# Made by @Legendl_Mr_Hacker
 # Don't remove these lines else gay..
 # Kang with credits..
 
 
 import asyncio
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("hdd"))
@@ -1421,3 +1421,4 @@ CmdHelp("diwali").add_command(
 ).add_command(
         'diwali', None, 'մsɾ αղժ sҽҽ'
 ).add()
+

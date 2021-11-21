@@ -22,3 +22,4 @@ async def _(event):
 CmdHelp("chup").add_command(
     'chup', None, 'Use amd See'
 ).add()
+

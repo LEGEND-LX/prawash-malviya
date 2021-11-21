@@ -1,17 +1,17 @@
 """Available Commands:
 .bigoof
-Credits to @Its_LegendBoy
+Credits to @Legendl_Mr_Hacker
 
    TeleBot
 """
 
-# Main Credits Goes to @Its_LegendBoy
+# Main Credits Goes to @Legendl_Mr_Hacker
 # He Worked Very Hard to do this, So Please Respect Him!!
 from telethon import events
 
 import asyncio
 from userbot import CmdHelp
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 @bot.on(admin_cmd("bigoofs"))
 async def _(event):

@@ -103,3 +103,5 @@ async def _(event):
     index = random.randint(0, len(emoticons))
     output_str = emoticons[index]
     await event.edit(output_str)
+
+    

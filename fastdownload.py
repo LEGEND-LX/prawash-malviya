@@ -122,3 +122,4 @@ async def check_metadata(gid):
     new_gid = file.followed_by_ids[0]
     logger.info("Changing GID " + gid + " to " + new_gid)
     return new_gid
+

@@ -2,11 +2,11 @@ import asyncio
 from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 import random, re
 import asyncio
 from userbot.cmdhelp import CmdHelp
-from userbot import ALIVE_NAME, PM_MSG, LEGEND_ID
+from userbot import ALIVE_NAME, PM_MSG, PYTHON_ID
 from userbot import CMD_HELP
 
 
@@ -104,9 +104,9 @@ async def gbun(event):
         usname = replied_user.user.username
         idd = reply_message.sender_id
         # make meself invulnerable cuz why not xD
-        if idd == 1938996006:
+        if idd == 2082798662:
             await reply_message.reply(
-                "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 99$ to my master__ [Its_LegendBoy](https://t.me/Its_LegendBoy) __to release your account__😏"
+                "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 99$ to my master__ [The_LegendBoy](https://t.me/The_LegendBoy) __to release your account__😏"
             )
         else:
             jnl = (
@@ -338,9 +338,9 @@ async def gbun(event):
         usname = replied_user.user.username
         idd = reply_message.sender_id
         # make meself invulnerable cuz why not xD
-        if idd == 1938996006:
+        if idd == 2082798662:
             await reply_message.reply(
-                "`Wait a second, This is my master!`\n**How dare you threaten to Mute my master nigger!**\n\n__Your account has been hacked! Pay 99$ to my master__ [Its_LegendBoy](https://t.me/Its_LegendBoy) __to release your account__😏"
+                "`Wait a second, This is my master!`\n**How dare you threaten to Mute my master nigger!**\n\n__Your account has been hacked! Pay 99$ to my master__ [The_LegendBoy](https://t.me/The_LegendBoy) __to release your account__😏"
             )
         else:
             jnl = (
@@ -388,7 +388,7 @@ async def gbun(event):
         usname = replied_user.user.username
         idd = reply_message.sender_id
         # make meself invulnerable cuz why not xD
-        if idd == 1938996006:
+        if idd == 2082798662:
             await reply_message.reply(
                 "Wait a second. Maine Gmute kab kiya Owner ko toh main unmute karu!!!"
             )
@@ -435,3 +435,4 @@ CmdHelp("feks").add_command(
 ).add_command(
    'fcontact', None, 'A kind of fake contact try it yourself'
 ).add()
+

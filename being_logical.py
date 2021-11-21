@@ -575,3 +575,9 @@ async def _(event):
 
 
 from userbot.cmdhelp import CmdHelp
+CmdHelp("Logical").add_command(
+     "belo", None, "Use and See"
+).add_type(
+     "Addons"
+).add()
+

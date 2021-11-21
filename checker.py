@@ -1,16 +1,4 @@
-"""
-Check Current Beta firmwares of Samsung Devices
-Syntax: .check androidVersion modelNumber
-By :- Jaskaran ^_^ 
-Telegram :- @Zero_cool7870
-
-"""
 from userbot.cmdhelp import CmdHelp
-CmdHelp("checker").add_command(
-   'chek', None, 'Use And See'
-).add_command(
-   'otaup', None, 'Use And See'
-).add() 
 import gc
 from asyncio import wait
 
@@ -471,3 +459,12 @@ async def checker(e):
         )
         print("ALL DONE! Kthxbye now")
         await e.delete()
+
+CmdHelp("checker").add_command(
+   'chek', None, 'Use And See'
+).add_command(
+   'otaup', None, 'Use And See'
+).add() 
+"""check androidVersion modelNumber
+By :- Jaskaran ^_^ """
+

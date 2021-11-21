@@ -33,4 +33,7 @@ from userbot.cmdhelp import CmdHelp
 
 CmdHelp("batch").add_command(
     'upb', None, 'set TEMP_DIR in Your ENV Vars First'
-)
+).add_type(
+    'Addons'
+).add()
+

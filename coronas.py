@@ -41,3 +41,4 @@ from userbot.cmdhelp import CmdHelp
 CmdHelp("coronas").add_command(
    'coronas', None, '.corona <country name>'
 ).add()
+

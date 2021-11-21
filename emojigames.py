@@ -166,3 +166,5 @@ async def _(event):
             await event.edit(file=InputMediaDice(emoticon=emoticon))
         else:
             await event.reply(file=InputMediaDice(emoticon=emoticon))
+
+            

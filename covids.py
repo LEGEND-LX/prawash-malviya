@@ -1,8 +1,3 @@
-# @TechnoAyanOfficial
-# Big Thanks To Spechide and ItWaze
-
-"""Corona: Avaible commands: .covid <cname>
-"""
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
@@ -40,3 +35,5 @@ from userbot.cmdhelp import CmdHelp
 CmdHelp("covids").add_command(
    'covid', None, '.covid <country name>'
 ).add()
+
+

@@ -46,3 +46,5 @@ async def detect(event):
 
     await devent.delete()
     await borg.send_message(event.chat_id, file=result)
+
+      

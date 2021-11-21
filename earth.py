@@ -19,3 +19,5 @@ async def _(event):
         await asyncio.sleep(1)
         await event.edit("".join(deq))
         deq.rotate(1)
+
+         

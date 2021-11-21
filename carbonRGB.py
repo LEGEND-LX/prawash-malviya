@@ -13,7 +13,7 @@ from time import sleep
 import asyncio
 import os
 import random
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 #@bot.on(events.NewMessage(pattern=r"\.karb ", outgoing=True))

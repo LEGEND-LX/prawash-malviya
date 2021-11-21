@@ -1,4 +1,3 @@
-
 from userbot.cmdhelp import CmdHelp
 
 
@@ -47,3 +46,10 @@ def get_restriction_string(a) -> str:
         b = tmp_string
     # b += "\n\n" + Translation.POWERED_BY_SE
     return b
+
+
+from userbot.cmdhelp import CmdHelp
+CmdHelp("check").add_command(
+   'cr', None, 'Use and See'
+).add() 
+
