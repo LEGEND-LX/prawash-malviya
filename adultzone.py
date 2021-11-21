@@ -1,5 +1,5 @@
 # credits to userge
-# ported to LEGENDBOT by @Its_LegendBoy
+# ported to PYTHONBOT by @LegendL_Mr_Hacker
 # will be adding more soon
 
 import asyncio
@@ -9,7 +9,7 @@ import urllib
 import requests
 
 from userbot import *
-from LEGENDBOT.utils import *
+from PYTHONBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("boobs$"))
