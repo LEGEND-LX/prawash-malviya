@@ -1,4 +1,4 @@
-""".admin Plugin for @Its_LegendBoy"""
+""".admin Plugin for @Legendl_Mr_Hacker"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
@@ -23,3 +23,4 @@ async def _(event):
 CmdHelp("calladmin").add_command(
   'admins', None, 'it Help u to call admin'
 ).add()
+
