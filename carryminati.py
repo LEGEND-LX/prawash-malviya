@@ -66,3 +66,4 @@ async def _(event):
 CmdHelp("carryminati").add_command(
     'carry', None, 'CarryMinati'
 ).add()
+
