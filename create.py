@@ -1,4 +1,4 @@
-# Made By @Its_LegendBoy
+# Made By @Legendl_Mr_Hacker
 # Keep Credits else gay....
 
 """Create Private Groups
@@ -10,7 +10,7 @@ from telethon.tl import functions
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot import CMD_HELP
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="create (b|g|c) (.*)"))  # pylint:disable=E0602
