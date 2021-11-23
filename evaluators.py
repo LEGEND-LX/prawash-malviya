@@ -6,7 +6,7 @@ import os
 import sys
 import traceback
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PYTHONBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import *
 from userbot.cmdhelp import CmdHelp
 
@@ -18,17 +18,17 @@ async def _(event):
     cmd = "".join(event.text.split(maxsplit=1)[1:])
     if not cmd:
         return await edit_delete(event, "`What should i execute?..`")
-    LEGENDevent = await edit_or_reply(event, "`Executing.....`")
-    process = await asyncio.create_subprocess_sLEGEND(
+    PYTHONevent = await edit_or_reply(event, "`Executing.....`")
+    process = await asyncio.create_subprocess_sPYTHON(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
     result = str(stdout.decode().strip()) + str(stderr.decode().strip())
-    LEGENDUser = await event.client.get_me()
-    if LEGENDUser.username:
-        curruser = LEGENDUser.username
+    PYTHONUser = await event.client.get_me()
+    if PYTHONUser.username:
+        curruser = PYTHONUser.username
     else:
-        curruser = "LEGENDBOT"
+        curruser = "PYTHONBOT"
     uid = os.geteuid()
     if uid == 0:
         cresult = f"`{curruser}:~#` `{cmd}`\n`{result}`"
@@ -55,7 +55,7 @@ async def _(event):
     cmd = "".join(event.text.split(maxsplit=1)[1:])
     if not cmd:
         return await edit_delete(event, "`What should i run ?..`")
-    LEGENDevent = await edit_or_reply(event, "`Running ...`")
+    PYTHONevent = await edit_or_reply(event, "`Running ...`")
     old_stderr = sys.stderr
     old_stdout = sys.stdout
     redirected_output = sys.stdout = io.StringIO()
@@ -80,7 +80,7 @@ async def _(event):
         evaluation = "Success"
     final_output = f"**•  Eval : **\n`{cmd}` \n\n**•  Result : **\n`{evaluation}` \n"
     await edit_or_reply(
-        LEGENDevent,
+        PYTHONevent,
         text=final_output,
         aslink=True,
         linktext=f"**•  Eval : **\n`{cmd}` \n\n**•  Result : **\n",
