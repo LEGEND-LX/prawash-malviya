@@ -73,3 +73,4 @@ async def aexec(code, event):
 CmdHelp("eval").add_command(
     'eval <plugin code>', None, 'run python code on telegram'
 ).add()
+
