@@ -1,11 +1,11 @@
-# By @keinshin for Black Lightning
+# By @Python for Userbot_Support
 # If you steal this without credits You will be the geyest gey ever in the world that you will suck my dick.
 import asyncio
 
 from .. import ALIVE_NAME
 from ..utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Legend"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Python"
 from . import *
 CmdHelp("chutiye").add_command(
    'chutiye', None, 'Check Fake Limitiation'
