@@ -5,7 +5,7 @@ import asyncio
 
 from telethon import functions
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -26,7 +26,7 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""**OWNER OF LEGENDBOT** @Its_LegendBoy.\n**Support group**~@Legend_Userbot.\n**Channel**~@Its_LegendBot""")
+    await event.edit("""**OWNER OF PYTHONBOT** @Legendl_Mr_Hacker.\n**Support group**~@Python_Userbot_Support.\n**Channel**~@Python_Userbot_Support""")
 
 CmdHelp("owner").add_command(
   "dc", None, "Gets the DataCenter Number"
