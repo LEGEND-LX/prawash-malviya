@@ -12,10 +12,10 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon import functions, types, events
-from LEGENDBOT import CmdHelp, bot as LEGENDBOT
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
-from LEGENDBOT.Config import Config
-from LEGENDBOT.plugins.sql_helper.fban_sql import (
+from PYTHONBOT import CmdHelp, bot as PYTHONBOT
+from PYTHONBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from PYTHONBOT.Config import Config
+from PYTHONBOT.plugins.sql_helper.fban_sql import (
     add_channel,
     get_all_channels,
     in_channels,
@@ -24,14 +24,14 @@ from LEGENDBOT.plugins.sql_helper.fban_sql import (
 
 logs_id = Config.FBAN_LOGGER_GROUP
 bot = "@MissRose_bot"
-LEGEND_logo = "./LEGEND_logo.jpg"
+PYTHON_logo = "./PYTHON_logo.jpg"
 # Keep all credits pls
-# madewith great effort by @Its_LegendBoy
-# modified by @Its_LegendBoy for fbans
+# madewith great effort by @Legendl_Mr_Hacker
+# modified by @Legendl_Mr_Hacker for fbans
 
 
-@LEGENDBOT.on(admin_cmd(pattern="fban ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="fban ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,8 +144,8 @@ async def _(event):
                 except BaseException:
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")# Written by @HeisenbergTheDanger
 
-@LEGENDBOT.on(admin_cmd(pattern="unfban ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="unfban ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -259,8 +259,8 @@ async def _(event):
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")
 
 
-@LEGENDBOT.on(admin_cmd(pattern=r"fadd ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern=r"fadd ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
 async def add_ch(event):
     if event.fwd_from:
         return
@@ -300,8 +300,8 @@ async def add_ch(event):
         await event.delete()
 
 
-@LEGENDBOT.on(admin_cmd(pattern=r"fremove ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern=r"fremove ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
 async def remove_ch(event):
     if event.fwd_from:
         return
@@ -329,8 +329,8 @@ async def remove_ch(event):
         await event.delete()
 
 
-@LEGENDBOT.on(admin_cmd(pattern="fgroups"))
-@LEGENDBOT.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="fgroups"))
+@PYTHONBOT.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
 async def list(event):
     if event.fwd_from:
         return
@@ -356,8 +356,8 @@ async def list(event):
         await eor(event, msg)
 
 
-@LEGENDBOT.on(admin_cmd(pattern="fsearch ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="fsearch ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
 async def search(event):
     if event.fwd_from:
         return
@@ -377,12 +377,12 @@ async def search(event):
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 
-@LEGENDBOT.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
-@LEGENDBOT.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
+@PYTHONBOT.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    LEGEND_input = event.pattern_match.group(1)
+    PYTHON_input = event.pattern_match.group(1)
     chat = "@MissRose_Bot"
     await eor(event, "`Making new fed...`")
     async with borg.conversation(chat) as conv:
@@ -390,7 +390,7 @@ async def _(event):
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=609517172)
             )
-            await event.client.send_message(chat, f"/newfed {LEGEND_input}")
+            await event.client.send_message(chat, f"/newfed {PYTHON_input}")
             response = await response
         except YouBlockedUserError:
             await eor(event, "`Please unblock` @MissRose_Bot `and try again`")
@@ -403,18 +403,18 @@ async def _(event):
             await eor(event, f"{response.message.message}")
 
 
-@LEGENDBOT.on(admin_cmd(pattern="renamefed ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="renamefed ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    LEGEND_input = event.pattern_match.group(1)
+    PYTHON_input = event.pattern_match.group(1)
     chat = "@MissRose_Bot"
     await event.edit("`Trying to rename your fed...`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=609517172))
-              await event.client.send_message(chat, f"/renamefed {LEGEND_input}")
+              await event.client.send_message(chat, f"/renamefed {PYTHON_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @MissRose_Bot")
@@ -424,13 +424,13 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@LEGENDBOT.on(admin_cmd(pattern="fstat ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="fstat ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    LEGEND = await event.edit("`Collecting fstat....`")
-    thumb = LEGEND_logo
+    PYTHON = await event.edit("`Collecting fstat....`")
+    thumb = PYTHON_logo
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         lavde = str(previous_message.sender_id)
@@ -439,7 +439,7 @@ async def _(event):
         lavde = event.pattern_match.group(1)
         user = lavde
     if lavde == "":
-        await LEGEND.edit(
+        await PYTHON.edit(
             "`Need username/id to check fstat`"
         )
         return
@@ -454,25 +454,25 @@ async def _(event):
                     await massive.click(0)
                     await asyncio.sleep(2)
                     massive = await conv.get_response()
-                    await LEGENDBOT.send_file(
+                    await PYTHONBOT.send_file(
                         event.chat_id,
                         massive,
                         thumb=thumb,
-                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using LEGENDBOT](t.me/Legend_Userbot) ⚡**",
+                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using PYTHONBOT](t.me/Python_Userbot_Support) ⚡**",
                     )
                 else:
                     await borg.send_message(event.chat_id, massive.text)
                 await event.delete()
             except YouBlockedUserError:
-                await LEGEND.edit("`Please Unblock` @MissRose_Bot")
+                await PYTHON.edit("`Please Unblock` @MissRose_Bot")
 
 
-@LEGENDBOT.on(admin_cmd(pattern="fedinfo ?(.*)"))
-@LEGENDBOT.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
+@PYTHONBOT.on(admin_cmd(pattern="fedinfo ?(.*)"))
+@PYTHONBOT.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    LEGEND = await eor(event, "`Fetching fed info.... please wait`")
+    PYTHON = await eor(event, "`Fetching fed info.... please wait`")
     lavde = event.pattern_match.group(1)
     async with borg.conversation(bot) as conv:
         try:
@@ -480,9 +480,9 @@ async def _(event):
             await conv.get_response()
             await conv.send_message("/fedinfo " + lavde)
             massive = await conv.get_response()
-            await LEGEND.edit(massive.text + "\n\n**LEGENDARY_AF_LEGENDBOT**")
+            await PYTHON.edit(massive.text + "\n\n**LEGENDARY_AF_PYTHONBOT**")
         except YouBlockedUserError:
-            await LEGEND.edit("`Please Unblock` @MissRose_Bot")
+            await PYTHON.edit("`Please Unblock` @MissRose_Bot")
             
 
 CmdHelp("fed_bot").add_command(
