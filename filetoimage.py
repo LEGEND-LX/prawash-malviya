@@ -46,3 +46,5 @@ async def on_file_to_photo(event):
         )
     except PhotoInvalidDimensionsError:
         return
+
+    
