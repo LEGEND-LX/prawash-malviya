@@ -1,4 +1,4 @@
-from userbot import bot as LEGEND
+from userbot import bot as PYTHON
 from userbot.utils import admin_cmd as choot
 
 x = True
@@ -8,10 +8,11 @@ async def yashraid(event):
        
         await event.delete()
         kek = event.chat_id
-        await LEGEND.send_message(kek, "TERI MA KI CHOOXT MAARUU BSDKEE")
-        await LEGEND.send_message(kek, "TERI BHN KA BHOSXDA FAAD DIA MADARCHOD")
-        await LEGEND.send_message(kek, "TERI BHN KI GANXD ME DYNAMTE LAGA KE UDA DIA")
-        await LEGEND.send_message(kek, "LEGEND OP HAI HM BAAP BOLTE HMKO")
+        await PYTHON.send_message(kek, "TERI MA KI CHOOXT MAARUU BSDKEE")
+        await PYTHON.send_message(kek, "TERI BHN KA BHOSXDA FAAD DIA MADARCHOD")
+        await PYTHON_SUPPORT>edit > SEN.EDIT.send_message(kek, "TERI BHN KI GANXD ME DYNAMTE LAGA KE UDA DIA")
+        await PYTHONBOT.edit(PYTHON)<legendhacker>.edit
+delet.send_message(kek, "LEGEND OP HAI HM BAAP BOLTE HMKO")
         await LEGEND.send_message(kek, "TERI MAA KO CHOODUU")
         await LEGEND.send_message(kek, "MAADARCHODD")
         await LEGEND.send_message(kek, "😂")
