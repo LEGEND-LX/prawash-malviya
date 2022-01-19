@@ -1,4 +1,4 @@
-# Made by @Legendl_Mr_Hacker
+# Made by @LegendHacker_IN
 # Don't remove these lines else gay..
 # Kang with credits..
 
