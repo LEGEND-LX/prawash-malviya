@@ -17,7 +17,7 @@ running_processes: dict = {}
 
 @bot.on(admin_cmd(pattern="term(?: |$|\n)([\s\S]*)"))
 async def dc(event):  
-    await event.edit(f"{LEGEND}: Running Terminal.....")
+    await event.edit(f"{PYTHON}: Running Terminal.....")
     message = (str(event.chat_id) + ':' + str(event.message.id))
     if running_processes.get(message, False):
         await event.edit("A process for this event is already running!")
@@ -46,7 +46,7 @@ async def dc(event):
     output = open("term.txt", "w+")
     output.write(text)
     output.close()
-    await event.client.send_file(event.chat_id, "term.txt", reply_to=event.id, caption=f"{LEGEND}: Output too large, sending as file")
+    await event.client.send_file(event.chat_id, "term.txt", reply_to=event.id, caption=f"{PYTHON}: Output too large, sending as file")
     os.remove("term.txt")           
     return
 
