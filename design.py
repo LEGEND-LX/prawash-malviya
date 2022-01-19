@@ -1,4 +1,4 @@
-""".admin Plugin for @userbot"""
+""".admin Plugin for @Python_Userbot_Support"""
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from userbot.utils import admin_cmd
